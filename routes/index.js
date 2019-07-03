@@ -1,32 +1,15 @@
-const express = require("express");
-const logger = require("morgan");
-const mongoose = require("mongoose");
-const axios = require("axios");
-const moment = require("moment");
 
+const path = require("path");
+const router = require("express").Router();
+const apiRoutes = require("./api");
 
-var db = require("../../models");
+// API Routes
+router.use("/api", apiRoutes);
 
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/movieDB";
-mongoose.connect(MONGODB_URI);
-mongoose.Promise = Promise;
+// If no API routes are hit, send the React app
+router.use(function(req, res) {
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+});
 
-var PORT = process.env.PORT || 3001;
+module.exports = router;
 
-var app = express();
-
-
-
-app.use(logger("dev"));
-
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-
-app.use(express.static("public"));
-
-
-mongoose.connect("mongodb://localhost/movieDB", { useNewUrlParser: true });
-
-if (process.env.NODE_ENV === "production") {
-    app.use(express.static("client/build"))
-}
