@@ -1,5 +1,5 @@
 {
-  "name": "Submanredux",
+  "name": "submanredux-stg",
   "description": "This app manages subscriptions.",
   "repository": "https://github.com/kylewoodruff/submanredux",
   "env": {
