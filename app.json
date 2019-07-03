@@ -2,4 +2,11 @@
   "name": "Submanredux",
   "description": "This app manages subscriptions.",
   "repository": "https://github.com/kylewoodruff/submanredux",
+  "env": {
+    "INHERIT_THIS_CONFIG_VAR": {
+      "required": true
+    },
+  "scripts": {
+    "postdeploy": ""
+  },
 }
