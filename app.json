@@ -5,6 +5,7 @@
   "env": {
     "INHERIT_THIS_CONFIG_VAR": {
       "required": true
+    },
     "HEROKU_APP_NAME": {
       "required": true
     },
