@@ -35,7 +35,7 @@ const userSeed = [
       "HBO",
     date: new Date(Date.now())
   }
-];
+]
 
 db.User
   .remove({})
