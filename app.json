@@ -7,16 +7,6 @@
     "scalpel"
   ],
   "repository": "https://github.com/kylewoodruff/submanredux",
-  "success_url": "/",
-  "scripts": {
-    "postdeploy": "bundle exec rake bootstrap"
-  },
-  "addons": [
-    {
-      "plan": "mongolab:shared-single-small",
-      "as": "MONGO"
-    },
-  ],
   "buildpacks": [
     {
       "url": "https://github.com/heroku/heroku-buildpack-nodejs"
