@@ -1,19 +1,19 @@
 {
-  "name": "submanredux-stg",
-  "description": "This app manages subscriptions.",
-  "repository": "https://github.com/kylewoodruff/submanredux",
+  "name": "submanredux",
+  "scripts": {},
   "env": {
-    "INHERIT_THIS_CONFIG_VAR": {
-      "required": true
-    },
-    "HEROKU_APP_NAME": {
-      "required": true
-    },
-    "HEROKU_PARENT_APP_NAME": {
+    "MONGODB_URI": {
       "required": true
     }
   },
-  "scripts": {
-    "postdeploy": ""
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
   },
+  "addons": [
+    "mongolab"
+  ],
+  "buildpacks": [],
+  "stack": "heroku-18"
 }
