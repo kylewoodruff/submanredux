@@ -1,0 +1,19 @@
+{
+  "name": "submanredux",
+  "scripts": {},
+  "env": {
+    "MONGODB_URI": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+    "mongolab"
+  ],
+  "buildpacks": [],
+  "stack": "heroku-18"
+}
