@@ -3,48 +3,35 @@ const db = require("../models");
 
 module.exports = {
   findAll: function(req, res) {
-    db.User
+    db.Subs
       .find(req.query)
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   findById: function(req, res) {
-    db.User
+    db.Subs
       .findById(req.params.id)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
-    db.User
+    db.Subs
       .create(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {
-    db.User
+    db.Subs
       .findOneAndUpdate({ _id: req.params.id }, req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   remove: function(req, res) {
-    db.User
+    db.Subs
       .findById({ _id: req.params.id })
       .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
-  },
-
-  populate: function(req, res) {
-    db.User.find({})
-    .populate("Watchlist")
-    .then(dbModel => res.json(dbModel))
-    .catch(err => res.json(err))
-  },
-  populate: function(req, res) {
-    db.User.find({})
-    .populate("Subs")
-    .then(dbModel => res.json(dbModel))
-    .catch(err => res.json(err))
   }
 };

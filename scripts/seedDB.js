@@ -10,32 +10,34 @@ mongoose.connect(
 
 const userSeed = [
   {
-    username: "jayxmiller",
+    email: "jayxmiller@gmail.com",
     googleId: "1234",
-    subscription: "itunes",
+    facebookId: "394934",
     date: new Date(Date.now()),
   },
   {
     username: "kyle",
     googleId: "345",
-    subscription: "hulu",
+    facebookId: "0930932",
     date: new Date(Date.now()),
   },
   {
     username: "Dante",
     googleId: "2837",
-    subscription:
-      "netflix",
+    facebookId: "890389",
+      
     date: new Date(Date.now())
   },
   {
     username: "George",
     googleId: "982937",
-    subscription:
-      "HBO",
+    facebookId: "8938932",
+      
     date: new Date(Date.now())
   }
 ]
+
+
 
 db.User
   .remove({})
