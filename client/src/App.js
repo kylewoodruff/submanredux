@@ -1,13 +1,12 @@
 import React from 'react';
-import Navbar from "./components/Navbar";
-import Header from "./components/Header";
+import Landing from "./pages/Landing";
+import styled from 'styled-components';
 import './App.css';
 
 function App() {
   return (
     <div className="container-fluid">
-      <Navbar />
-      <Header />
+      <Landing />
     </div>
     
   );
