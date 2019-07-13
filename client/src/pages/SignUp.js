@@ -1,14 +1,13 @@
 import React, { Component } from "react";
-import Navbar from "../components/Navbar";
 
-class Playlist extends Component {
+class SignUp extends Component {
     render() {
         return (
             <div>
-                <Navbar />
+                <h1>Sign Up</h1>
             </div>
         )
     }
 }
 
-export default Playlist;
+export default SignUp;

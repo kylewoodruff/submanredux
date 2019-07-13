@@ -8,7 +8,7 @@ import "../assets/landing.css"
 class Landing extends Component {
     render() {
         return (
-            <div>
+            <div className="container-fluid">
                 <LandNav />
                 <div className="row">
                     <div className="col-sm-0 col-lg-1 col-xl-1">

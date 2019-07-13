@@ -13,7 +13,7 @@ function Navbar(props) {
             <nav className="main-menu">
                 <ul>
                     <li>
-                        <a href="/">
+                        <a href="/dashboard">
                             <i className="fa fa-home "></i>
                             <span className="nav-text">
                                 Dashboard
@@ -21,7 +21,7 @@ function Navbar(props) {
                         </a>
                     </li>
                     <li className="has-subnav">
-                        <a href="#">
+                        <a href="/subscriptions">
                             <i className="fa fa-list fa-2x"></i>
                             <span className="nav-text">
                                 Subscriptions
@@ -29,7 +29,7 @@ function Navbar(props) {
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="/watchlist">
                             <i className="fa fa-tv fa-2x"></i>
                             <span className="nav-text">
                                 Watch List
@@ -40,15 +40,15 @@ function Navbar(props) {
 
                 <ul className="logout">
                     <li>
-                        <a href="#">
+                        <a href="/profile">
                             <i className="fa fa-cogs"></i>
                             <span className="nav-text">
-                                Settings
+                                Profile
                         </span>
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="/">
                             <i className="fa fa-sign-out fa-2x"></i>
                             <span className="nav-text">
                                 Logout

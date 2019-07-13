@@ -42,10 +42,10 @@ class LandNav extends Component {
                 <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <NavText href="/">Login</NavText>
+                            <NavText href="/login">Login</NavText>
                         </li>
                         <li className="nav-item">
-                            <NavText href="/">Sign Up</NavText>
+                            <NavText href="/signup">Sign Up</NavText>
                         </li>
                     </ul>
                 </div>
