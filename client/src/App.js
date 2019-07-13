@@ -7,6 +7,7 @@ import Dashboard from "./pages/Dashboard";
 import Watchlist from "./pages/Watchlist";
 import Playlist from "./pages/Playlist";
 import Subscriptions from "./pages/Subscriptions";
+import Profile from "./pages/Profile";
 import NoMatch from "./pages/NoMatch";
 import styled from 'styled-components';
 
@@ -24,6 +25,7 @@ function App() {
           <Route exact path="/subscriptions" component={Subscriptions} />
           <Route exact path="/watchlist" component={Watchlist} />
           <Route exact path="/playlist" component={Playlist} />
+          <Route exact path="/profile" component={Profile} />
           <Route component={NoMatch} />
         </Switch>
       </div>
