@@ -2,14 +2,22 @@ import React from "react";
 import styled from 'styled-components';
 
 const Jumbo = styled.div`
-    margin-top: 225px;
+    margin-top: 180px;
     background-color: rgba(0, 0, 0, 0.0);
     padding: 35px;
     border-radius: 15px;
     font-family: 'Roboto', sans-serif;
 
     @media (max-width: 576px) {
-        margin-top: 135px;
+        margin-top: 150px;
+    }
+
+    @media (max-width: 768px) {
+        margin-top: 150px;
+    }
+
+    @media (max-width: 992px) {
+        margin-top: 150px;
     }
 `;
 
@@ -63,8 +71,8 @@ const SignUp = styled.a`
 function Jumbotron() {
     return (
         <Jumbo>
-            <Slogan className="text-center">Diving deep to keep your subsciptions neat.</Slogan>
-            <SubSlogan className="text-center">All of your subscriptions in one place.</SubSlogan>
+            <Slogan className="text-center">Diving deep to keep your subsciptions neat</Slogan>
+            <SubSlogan className="text-center">All of your subscriptions in one place</SubSlogan>
             <div className="text-center">
                 <SignUp className="btn-lg" href="/signup" role="button">Sign Up Now!</SignUp>
                     <User className="text-center user">Already a user?</User>
