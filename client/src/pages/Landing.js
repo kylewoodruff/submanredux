@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Jumbotron from "../components/Jumbotron-Landing";
 import LandNav from "../components/LandNav";
 import Wrapper from "../components/Wrapper";
-import "../App.css";
+import "../assets/landing.css";
 
 
 class Landing extends Component {
