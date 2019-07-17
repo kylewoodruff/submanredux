@@ -27,13 +27,13 @@ const Container = styled.div`
     }
 `;
 
-const Form = styled.form`
-    margin-top: 225px;
+// const Form = styled.form`
+//     margin-top: 225px;
 
-    @media (max-width: 576px) {
-        margin-top: 135px;
-    }
-`;
+//     @media (max-width: 576px) {
+//         margin-top: 135px;
+//     }
+// `;
 
 const SignupSelect = styled.div`
     display: flex;

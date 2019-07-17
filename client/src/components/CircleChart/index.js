@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Chart from "react-apexcharts";
-import styled from 'styled-components';
+//import styled from 'styled-components';
 
 class CircleChart extends Component {
     constructor(props) {
@@ -16,9 +16,9 @@ class CircleChart extends Component {
                 theme: {
                     monochrome: {
                         enabled: true,
-                        color: "#FC2E01",
-                        shadeTo: "light",
-                        shadeIntensity: 0.99
+                        color: "#0325FB",
+                        shadeTo: "dark",
+                        shadeIntensity: 0.19
                     }     
                 }
             },

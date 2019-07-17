@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-//import "./style.css";
 import styled from 'styled-components';
 
 const FaNav = styled.i`
@@ -11,6 +10,10 @@ const FaNav = styled.i`
     vertical-align: middle;
     font-size:20px;
     color:rgb(202, 202, 202);
+
+    :hover {
+        color: white;
+    }
 `;
 
 const FaProfile = styled.i`
@@ -28,7 +31,7 @@ const Area = styled.div`
 `;
 
 const MainMenu = styled.nav`
-    background:rgb(39, 39, 39);
+    background:rgb(35, 35, 35);
     position:absolute;
     top:0;
     bottom:0;
@@ -71,8 +74,8 @@ const MainMenu = styled.nav`
         height: 40px;
 
         :hover {
-            color:white;
-            background-color:rgb(52, 31, 128);
+            color: white;
+            background-color:#0325FB;
         }
     }
 
@@ -112,6 +115,10 @@ const NavText = styled.span`
     width:185px;
     color:rgb(202, 202, 202);
     font-family: 'Titillium Web', sans-serif;
+
+    :hover {
+        color: white;
+    }
 `;
 
 const NavText2 = styled.span`
@@ -122,6 +129,10 @@ const NavText2 = styled.span`
     color:rgb(202, 202, 202);
     font-family: 'Titillium Web', sans-serif;
     margin-left: -5px;
+
+    :hover {
+        color: white;
+    }
 `;
 
 const DropdownMenu = styled.div`
@@ -136,7 +147,7 @@ const DropdownItem = styled.a`
     font-family: 'Titillium Web', sans-serif;
 
     :hover {
-        background-color: rgb(52, 31, 128);
+        background-color: rgb(61, 100, 207);
         color: white;
     }
 `;
