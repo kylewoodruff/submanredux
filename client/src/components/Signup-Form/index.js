@@ -1,7 +1,7 @@
 import React from "react";
 import styled from 'styled-components';
 import SignupHeader from "../Signup-Header";
-import Api from "../../utils/Api"
+import api from "../../utils/api"
 
 const Container = styled.div`
     width: 100%;
@@ -70,7 +70,7 @@ class signupForm extends React.Component {
             password: ""
         });
         console.log(this.state)
-        Api.saveUser({
+        api.saveUser({
             email: this.state.email,
             firstName: this.state.firstName,
             lastName: this.state.lastName,
