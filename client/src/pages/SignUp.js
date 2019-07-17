@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import SignupForm from "../components/Signup-Form";
+import SignupForm from "../components/signupForm";
 import Img from "../assets/images/Newbackground@4x.png";
+import styled from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
-import SignupHeader from "../signupHeader";
+import SignupHeader from "../components/signupHeader";
+import SignupSelect from "..//components/signupSelect";
 
 const SignUpStyle = createGlobalStyle`
   body {
@@ -15,15 +17,26 @@ const SignUpStyle = createGlobalStyle`
     font-family: 'Roboto', sans-serif;
     height: 100%;
   }
-  `
+  `;
+
+
 
 class SignUp extends Component {
     render() {
         return (
             <React.Fragment>
                 <SignUpStyle />
-                <SignupHeader />
-                <SignupForm className="signup" />
+                <div className="container">
+                    <SignupHeader />
+                    <div className="signup-body">
+                        <div className="container">
+                            <SignupSelect />
+                            <strong class="mm-auto">OR</strong>
+                            <SignupForm />
+                        </div>
+                    </div>
+                </div>
+
             </React.Fragment>
         )
     }

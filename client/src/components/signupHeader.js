@@ -1,5 +1,6 @@
 import React from "react";
 import styled from 'styled-components';
+import logo from "../assets/images/"
 
 const RegistrationHeader = styled.div`
     padding: .5em 0;
