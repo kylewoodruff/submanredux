@@ -1,38 +1,36 @@
 import React, { Component } from "react";
-import Logo from "../Logo";
+import Img from "../../assets/images/fullLogo.png"
+import Wrapper2 from "../Wrapper2";
 import styled from 'styled-components';
 
-const Heading = styled.div`
-         background-color: rgba(70, 70, 70, 0.95);
-         height: 80px;
-         width: 100%;
-         margin: 0px 150px 10px 15px;
-        `;
+const Heading = styled.nav`
+    background-color: rgba(70, 70, 70, 0.95);
+    height: 95px;
+    width: 100%;
+    margin: 0px 100px 0px 30px;
+`;
 
-const Logos = styled.a`
-        color: rgb(255, 255, 255);
-        font-size: 32px;
-        font-family: 'Roboto', sans-serif;
-        margin-left: 100px;
-        height: 100px;
-        width: 600px;
-
-        :hover {
-            color: rgb(39, 111, 219);
-        }
-        `;
-
-
+const Brand = styled.div`
+    background: url(${Img});
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-origin: padding-box;
+    height: 85px;
+    width: 275px;
+    position: fixed;
+    right: 15px;
+    top: 5px;
+`;
 
 class Header extends Component {
     render() {
         return (
-            <Heading>
-                <Logos href="/dashboard">
-                    <Logo />
-                </Logos>
-
-            </Heading>
+            <Wrapper2>
+                <Heading>
+                    <Brand />
+                </Heading>
+            </Wrapper2>
         )
     }
 }
