@@ -1,14 +1,15 @@
-var mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 
-var Schema = mongoose.Schema;
+// eslint-disable-next-line prefer-destructuring
+const Schema = mongoose.Schema;
 
-var WatchlistSchema = new Schema({
- 
-  body: String
+const WatchlistSchema = new Schema({
+
+  body: String,
 });
 
-var Watchlist = mongoose.model("Watchlist", WatchlistSchema);
+const Watchlist = mongoose.model('Watchlist', WatchlistSchema);
 
 // Export the Note model
 module.exports = Watchlist;
