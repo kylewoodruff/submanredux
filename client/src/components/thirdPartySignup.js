@@ -7,7 +7,7 @@ const ButtonContainer = styled.div`
     justify-content: space-evenly;
 `;
 
-function signupSelect() {
+function thirdPartySignup() {
     return (
         <ButtonContainer>
             <form name="signup-facebook_form" method="post" action="/" id="reg-with-fb" noValidate="true">
@@ -24,4 +24,4 @@ function signupSelect() {
     )
 }
 
-export default signupSelect;
+export default thirdPartySignup;

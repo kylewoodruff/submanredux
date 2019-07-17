@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import SignupForm from "../components/signupForm";
 import Img from "../assets/images/Newbackground@4x.png";
-import styled from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
 import SignupHeader from "../components/signupHeader";
-import SignupSelect from "..//components/signupSelect";
+import ThirdPartySignup from "../components/thirdPartySignup";
 
 const SignUpStyle = createGlobalStyle`
   body {
@@ -30,7 +29,7 @@ class SignUp extends Component {
                     <SignupHeader />
                     <div className="signup-body">
                         <div className="container">
-                            <SignupSelect />
+                            <ThirdPartySignup />
                             <strong class="mm-auto">OR</strong>
                             <SignupForm />
                         </div>

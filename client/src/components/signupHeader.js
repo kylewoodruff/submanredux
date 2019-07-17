@@ -1,6 +1,6 @@
 import React from "react";
 import styled from 'styled-components';
-import logo from "../assets/images/"
+import logo from "../assets/images/Full_logo.png";
 
 const RegistrationHeader = styled.div`
     padding: .5em 0;
@@ -24,6 +24,7 @@ const Logo = styled.img`
     height: 60px;
     display: block;
     margin: 0 auto;
+
 `;
 
 const BoxContent = styled.div`
@@ -36,8 +37,7 @@ function SignupHeader() {
         <RegistrationHeader>
             <div className="container">
                 <BoxContent>
-                    <Logo src={ require('../../assets/images/Submerge_logo.png') } href="/">
-                    </Logo>
+                    <Logo src={logo}/>
                 </BoxContent>
             </div>
         </RegistrationHeader>
