@@ -1,6 +1,6 @@
 import React from "react";
 import styled from 'styled-components';
-import SignupHeader from "../Signup-Header";
+import SignupHeader from "../signupHeader";
 
 const Container = styled.div`
     width: 100%;

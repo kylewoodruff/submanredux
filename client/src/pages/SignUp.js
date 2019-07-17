@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import SignupForm from "../components/Signup-Form";
 import Img from "../assets/images/Newbackground@4x.png";
 import { createGlobalStyle } from 'styled-components';
+import SignupHeader from "../signupHeader";
 
 const SignUpStyle = createGlobalStyle`
   body {
@@ -21,6 +22,7 @@ class SignUp extends Component {
         return (
             <React.Fragment>
                 <SignUpStyle />
+                <SignupHeader />
                 <SignupForm className="signup" />
             </React.Fragment>
         )
