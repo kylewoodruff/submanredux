@@ -9,12 +9,20 @@ import Playlist from "./pages/Playlist";
 import Subscriptions from "./pages/Subscriptions";
 import Profile from "./pages/Profile";
 import NoMatch from "./pages/NoMatch";
-import styled from 'styled-components';
-
 import './App.css';
+import { createGlobalStyle } from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
+  body, html {
+    width: 100%;
+    height: 100%;
+  }
+`;
 
 function App() {
   return (
+    <React.Fragment>
+      <GlobalStyle />    
     <Router>
       <div>
         <Switch>
@@ -30,6 +38,7 @@ function App() {
         </Switch>
       </div>
     </Router>
+    </React.Fragment>
   );
 }
 
