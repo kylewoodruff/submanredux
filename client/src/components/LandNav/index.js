@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import styled from 'styled-components';
+import auth0Client from '../../Auth';
+
+
 
 const Nav = styled.nav`
          background-color: rgba(0, 0, 0, 0.65);
@@ -42,7 +45,7 @@ class LandNav extends Component {
                 <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <NavText href="/login">Login</NavText>
+                            <NavText onClick={auth0Client.signIn}>Login</NavText>
                         </li>
                         <li className="nav-item">
                             <NavText href="/signup">Sign Up</NavText>

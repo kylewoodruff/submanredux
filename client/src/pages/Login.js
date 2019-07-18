@@ -5,7 +5,6 @@ class Login extends Component {
         return (
             <div>
                 <h1>Please Login</h1>
-                <button onClick ={this.props.auth.login} >Login</button>
             </div>
         )
     }

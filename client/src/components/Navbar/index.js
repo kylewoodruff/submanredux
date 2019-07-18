@@ -2,6 +2,7 @@ import React, { Component } from "react";
 //import "./style.css";
 import styled from 'styled-components';
 
+
 const FaNav = styled.i`
     position: relative;
     display: table-cell;
