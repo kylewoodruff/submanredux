@@ -1,6 +1,7 @@
 import React from "react";
 import styled from 'styled-components';
 
+
 const Jumbo = styled.div`
     margin-top: 180px;
     background-color: rgba(0, 0, 0, 0.0);
@@ -79,7 +80,7 @@ function Jumbotron() {
             <div className="text-center">
                 <SignUp className="btn-lg" href="/signup" role="button">Sign Up Now!</SignUp>
                     <User className="text-center user">Already a user?</User>
-                    <JumboSign className="btn btn-sm jumboSign" href="/login"
+                <JumboSign className="btn btn-sm jumboSign" href="/login"
                         role="button">Login</JumboSign>
             </div>
         </Jumbo>
