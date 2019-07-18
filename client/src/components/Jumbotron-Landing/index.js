@@ -9,11 +9,14 @@ const Jumbo = styled.div`
     border-radius: 15px;
     font-family: 'Roboto', sans-serif;
 
+    @media (min-width: 310px) {
+        margin-top: 150px;
+    }
     @media (max-width: 576px) {
         margin-top: 150px;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
         margin-top: 150px;
     }
 

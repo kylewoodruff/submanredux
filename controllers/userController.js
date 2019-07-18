@@ -1,33 +1,33 @@
-const db = require("../models");
+const db = require('../models');
 
 
 module.exports = {
-  findAll: function(req, res) {
+  findAll(req, res) {
     db.User
       .find(req.query)
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  findById: function(req, res) {
+  findById(req, res) {
     db.User
       .findById(req.params.id)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  create: function(req, res) {
+  create(req, res) {
     db.User
       .create(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  update: function(req, res) {
+  update(req, res) {
     db.User
       .findOneAndUpdate({ _id: req.params.id }, req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  remove: function(req, res) {
+  remove(req, res) {
     db.User
       .findById({ _id: req.params.id })
       .then(dbModel => dbModel.remove())
@@ -35,16 +35,16 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
 
-  populate: function(req, res) {
+  populate(req, res) {
     db.User.find({})
-    .populate("Watchlist")
-    .then(dbModel => res.json(dbModel))
-    .catch(err => res.json(err))
+      .populate('Watchlist')
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.json(err));
   },
-  populate: function(req, res) {
+  populated(req, res) {
     db.User.find({})
-    .populate("Subs")
-    .then(dbModel => res.json(dbModel))
-    .catch(err => res.json(err))
-  }
+      .populate('Subs')
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.json(err));
+  },
 };
