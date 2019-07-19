@@ -11,6 +11,7 @@ import Profile from "./pages/Profile";
 import NoMatch from "./pages/NoMatch";
 import './App.css';
 import { createGlobalStyle } from "styled-components";
+import Callback from "./Callback";
 
 const GlobalStyle = createGlobalStyle`
   body, html {
@@ -34,6 +35,7 @@ function App() {
           <Route exact path="/watchlist" component={Watchlist} />
           <Route exact path="/playlist" component={Playlist} />
           <Route exact path="/profile" component={Profile} />
+          <Route exact path='/callback' component={Callback}/>
           <Route component={NoMatch} />
         </Switch>
       </div>

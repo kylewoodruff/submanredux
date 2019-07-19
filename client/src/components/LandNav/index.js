@@ -34,7 +34,9 @@ const NavText = styled.a`
         `;
 
 class LandNav extends Component {
+   
     render() {
+        
         return (
             <Nav className="navbar navbar-expand-lg navbar-light">
                 <Logo className="logo" href="/dashboard">Submerge</Logo>
