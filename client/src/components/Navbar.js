@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import styled from 'styled-components';
 import auth0Client from '../../Auth';
 
-
 const FaNav = styled.i`
     position: relative;
     display: table-cell;
@@ -77,7 +76,7 @@ const MainMenu = styled.nav`
 
         :hover {
             color: white;
-            background-color:#0325FB;
+            background-color: #0325FB;
         }
     }
 
@@ -149,7 +148,7 @@ const DropdownItem = styled.a`
     font-family: 'Titillium Web', sans-serif;
 
     :hover {
-        background-color: rgb(61, 100, 207);
+        background-color: #0325FB;
         color: white;
     }
 `;
