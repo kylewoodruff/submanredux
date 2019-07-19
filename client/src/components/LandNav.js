@@ -1,8 +1,6 @@
 import React, { Component } from "react";
+import Img from "../assets/images/wtlogontg.png";
 import styled from 'styled-components';
-import auth0Client from '../../Auth';
-
-
 
 const Nav = styled.nav`
          background-color: rgba(0, 0, 0, 0.65);
@@ -33,11 +31,20 @@ const NavText = styled.a`
         }
         `;
 
+const Brand = styled.img`
+        height: 60px;
+        left: 15px;
+        top: 5px;
+        margin-bottom: 5px;
+    `;
+
 class LandNav extends Component {
     render() {
         return (
             <Nav className="navbar navbar-expand-lg navbar-light">
-                <Logo className="logo" href="/dashboard">Submerge</Logo>
+                <Logo className="logo" href="/dashboard">
+                    <Brand src={Img} />
+                </Logo>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -45,7 +52,7 @@ class LandNav extends Component {
                 <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <NavText onClick={auth0Client.signIn}>Login</NavText>
+                            <NavText href="/login">Login</NavText>
                         </li>
                         <li className="nav-item">
                             <NavText href="/signup">Sign Up</NavText>

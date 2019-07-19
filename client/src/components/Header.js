@@ -1,26 +1,21 @@
 import React, { Component } from "react";
-import Img from "../../assets/images/fullLogo.png"
-import Wrapper2 from "../Wrapper2";
+import Img from "../assets/images/wtlogontg.png";
+import Wrapper2 from "./Wrapper2.js";
 import styled from 'styled-components';
 
 const Heading = styled.nav`
     background-color: rgba(70, 70, 70, 0.95);
-    height: 95px;
+    height: 70px;
     width: 100%;
     margin: 0px 100px 0px 30px;
 `;
 
-const Brand = styled.div`
-    background: url(${Img});
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-origin: padding-box;
-    height: 85px;
-    width: 275px;
+const Brand = styled.img`
+    height: 60px;
     position: fixed;
     right: 15px;
     top: 5px;
+    margin-bottom: 5px;
 `;
 
 class Header extends Component {
@@ -28,7 +23,7 @@ class Header extends Component {
         return (
             <Wrapper2>
                 <Heading>
-                    <Brand />
+                    <Brand src={Img}/>
                 </Heading>
             </Wrapper2>
         )
