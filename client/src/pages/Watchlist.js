@@ -3,6 +3,13 @@ import Navbar from "../components/Navbar.js";
 import Wrapper2 from "../components/Wrapper2.js";
 import Header from "../components/Header.js";
 import api from "../utils/mainAPI"
+import { createGlobalStyle } from 'styled-components';
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    color: ${props => (props.whiteColor ? 'white' : 'black')};
+  }
+  `
 
 class Watchlist extends Component {
     state = {
@@ -35,10 +42,17 @@ class Watchlist extends Component {
 
     render() {
         return (
-            <div>
-                <Navbar />
+            <React.Fragment>
+                <GlobalStyle whiteColor />
+                <Header />
                 <Wrapper2>
-                    <Header />
+                    <Navbar />
+
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+
                     <div className="row">
                         <div className="col">
                             <p></p>
@@ -51,7 +65,7 @@ class Watchlist extends Component {
                         </div>
                     </div>
                 </Wrapper2>
-            </div>
+            </React.Fragment>
         )
     }
 };

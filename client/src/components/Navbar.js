@@ -32,7 +32,7 @@ const Area = styled.div`
 
 const MainMenu = styled.nav`
     background:rgb(35, 35, 35);
-    position:absolute;
+    position:fixed;
     top:0;
     bottom:0;
     height:100%;

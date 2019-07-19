@@ -6,8 +6,12 @@ import styled from 'styled-components';
 const Heading = styled.nav`
     background-color: rgba(70, 70, 70, 0.95);
     height: 70px;
-    width: 100%;
-    margin: 0px 100px 0px 30px;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    margin-bottom: 10px;
+    z-index:1000;
 `;
 
 const Brand = styled.img`
