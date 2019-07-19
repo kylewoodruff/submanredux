@@ -39,7 +39,9 @@ const Brand = styled.img`
     `;
 
 class LandNav extends Component {
+   
     render() {
+        
         return (
             <Nav className="navbar navbar-expand-lg navbar-light">
                 <Logo className="logo" href="/dashboard">
