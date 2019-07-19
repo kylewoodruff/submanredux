@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Jumbotron from "../components/Jumbotron-Landing";
-import LandNav from "../components/LandNav";
-import Wrapper from "../components/Wrapper";
+import Jumbotron from "../components/JumboLand.js";
+import LandNav from "../components/LandNav.js";
+import Wrapper from "../components/Wrapper.js";
 import Img from "../assets/images/image.png";
 import { createGlobalStyle } from 'styled-components';
 
