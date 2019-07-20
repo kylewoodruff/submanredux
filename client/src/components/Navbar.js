@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styled from 'styled-components';
 import auth0Client from '../Auth.js';
 
+
 const FaNav = styled.i`
     position: relative;
     display: table-cell;
@@ -168,6 +169,7 @@ class Navbar extends Component {
                                 <FaNav className="fa fa-user"></FaNav>
                                 <NavText2 className="username">
                                 {"Username" || auth0Client.getProfile().name}
+
                                 </NavText2>
                             </a>
                             <DropdownMenu className="dropdown-menu" aria-labelledby="navbarDropdown">

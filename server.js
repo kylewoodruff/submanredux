@@ -3,11 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const helmet = require('helmet');
 const routes = require('./routes');
- const dontenv = require('dotenv').config()
-
-
-
-
+const dontenv = require('dotenv').config();
 
 
 const PORT = process.env.PORT || 3001;
