@@ -4,7 +4,7 @@ import Wrapper2 from "./Wrapper2.js";
 import styled from 'styled-components';
 
 const Heading = styled.nav`
-    background-color: rgba(70, 70, 70, 0.95);
+    background-color: rgba(65, 65, 65, 0.80);
     height: 70px;
     position: fixed;
     top: 0px;
