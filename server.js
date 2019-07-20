@@ -1,7 +1,10 @@
 /* eslint-disable no-console */
 const express = require('express');
 const mongoose = require('mongoose');
+const helmet = require('helmet');
 const routes = require('./routes');
+
+
 
 const PORT = process.env.PORT || 3001;
 
@@ -10,6 +13,9 @@ const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+app.use(helmet());
+
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
