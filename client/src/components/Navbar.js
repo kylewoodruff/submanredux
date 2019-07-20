@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from 'styled-components';
-import auth0Client from '../../Auth';
+import auth0Client from '../Auth';
+
 
 const FaNav = styled.i`
     position: relative;
@@ -167,7 +168,8 @@ class Navbar extends Component {
                             <a href="/profile" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <FaNav className="fa fa-user"></FaNav>
                                 <NavText2 className="username">
-                                {auth0Client.getProfile().name}
+                                {"Username" || auth0Client.getProfile().name}
+                        
                                 </NavText2>
                             </a>
                             <DropdownMenu className="dropdown-menu" aria-labelledby="navbarDropdown">
