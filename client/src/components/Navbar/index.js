@@ -160,6 +160,7 @@ class Navbar extends Component {
             auth0Client.signOut();
             props.history.replace('/');
           };
+          
         return (
             <Area>
                 <MainMenu>
