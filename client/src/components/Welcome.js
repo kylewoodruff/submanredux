@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import styled from 'styled-components';
 import auth0Client from '../Auth.js';
 
-const Welcome = styled.h5`
+const Welcome = styled.h6`
     font-weight: bold;
     color: white;
 `;
