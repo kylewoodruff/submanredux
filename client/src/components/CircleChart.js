@@ -12,7 +12,7 @@ class CircleChart extends Component {
                     fontFamily: "Helvetica, Arial, sans-serif",
                 },
                 // colors: ["#1345FA"],
-                labels: ["Monthly Cost %"],
+                labels: ["% of Total Monthly Cost"],
                 theme: {
                     monochrome: {
                         enabled: true,
@@ -22,19 +22,18 @@ class CircleChart extends Component {
                     }     
                 }
             },
-            series: [90],
+            series: [75],
             labels: ["Next Due"]
         }
     }
     render() {
         return (
             <Chart
-                name={"Next Due"}
                 options={this.state.options}
                 series={this.state.series}
                 type="radialBar"
-                width={500}
-                height={320}
+                width={300}
+                height={255}
             />
         )
     }

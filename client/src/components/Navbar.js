@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from 'styled-components';
-import auth0Client from '../Auth';
+import auth0Client from '../Auth.js';
 
 
 const FaNav = styled.i`
@@ -33,8 +33,8 @@ const Area = styled.div`
 `;
 
 const MainMenu = styled.nav`
-    background:rgb(35, 35, 35);
-    position:absolute;
+    background:rgb(10, 10, 20);
+    position:fixed;
     top:0;
     bottom:0;
     height:100%;
@@ -169,7 +169,7 @@ class Navbar extends Component {
                                 <FaNav className="fa fa-user"></FaNav>
                                 <NavText2 className="username">
                                 {"Username" || auth0Client.getProfile().name}
-                        
+
                                 </NavText2>
                             </a>
                             <DropdownMenu className="dropdown-menu" aria-labelledby="navbarDropdown">
