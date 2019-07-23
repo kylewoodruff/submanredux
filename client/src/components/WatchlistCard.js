@@ -1,37 +1,33 @@
 import React from 'react';
 import styled from 'styled-components'
 
-const Picture = styled.img `
-height: 200px;
+const Input = styled.img`
+height: auto;
 width: 200px;
 `;
 
-const Card = styled.div `
-width: 300px;
-height: 300px;
+const Card = styled.div`
+width: 200px;
+margin: 10px;
+
 `;
 
 
 
 function WatchlistCard(props) {
-    return (
-      <Card>
-      <div className="card" {...props}>
-        <ul className="list-group">
-        {props.result.map(results => (
-        <li className="list-group-item" key={results.id}>
-        <Picture src={results.picture} alt={results.name} />
-          <h5>Title: {results.name}</h5>
-          
-        </li>
+  return (
 
-      ))}
-        </ul>
-        
+    <Card className="card d-flex" data-value={props.results.id}  >
+
+      <Input type="image" key={props.results.id} src={props.results.picture} alt={props.results.name} className="btn submit" />
+      <div className="card-footer" key={props.results.name}>
+        <h5 >{props.results.name}</h5>
       </div>
-      </Card>
-      
-    );
-  }
-  
-  export default WatchlistCard;
+
+
+    </Card>
+
+  )
+}
+
+export default WatchlistCard;
