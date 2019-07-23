@@ -1,5 +1,7 @@
 import React from "react";
 import styled from 'styled-components';
+import auth0Client from '../Auth';
+
 
 const Jumbo = styled.div`
     margin-top: 180px;
@@ -79,7 +81,7 @@ function Jumbotron() {
             <div className="text-center">
                 <SignUp className="btn-lg" href="/signup" role="button">Sign Up Now!</SignUp>
                     <User className="text-center user">Already a user?</User>
-                    <JumboSign className="btn btn-sm jumboSign" href="/login"
+                    <JumboSign className="btn btn-sm jumboSign" onClick={auth0Client.signIn}
                         role="button">Login</JumboSign>
             </div>
         </Jumbo>
