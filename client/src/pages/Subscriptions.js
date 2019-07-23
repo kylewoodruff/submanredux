@@ -3,9 +3,10 @@ import Navbar from "../components/Navbar.js";
 import Header from "../components/Header.js";
 import { createGlobalStyle } from 'styled-components';
 
-const GlobalStyle = createGlobalStyle`
+const SubscriptionStyle = createGlobalStyle`
   body {
     color: ${props => (props.whiteColor ? 'white' : 'black')};
+    background:  black;
   }
   `
 
@@ -13,9 +14,8 @@ class Subscriptions extends Component {
   render() {
     return (
       <React.Fragment>
-        <GlobalStyle whiteColor />
+        <SubscriptionStyle whiteColor />
         <Header />
-        <h1>Hello World!!!</h1>
         <Navbar />
       </React.Fragment>
     )
