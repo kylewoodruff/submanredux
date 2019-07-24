@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const DCard = styled.div`
     display: table;
-    background-color: rgba(65, 65, 65, 0.80);
+    background-color: rgba(50, 50, 50, 0.50);
     height: auto;
     width: 100%;
     text-align: center;

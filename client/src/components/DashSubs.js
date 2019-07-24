@@ -1,39 +1,42 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from 'styled-components';
 
 const Card = styled.div`
-    background: rgba(45, 45, 45, 0.50);
+    background: rgba(50, 50, 50, 0.50);
 `;
 
 const CardText = styled.p`
-    font-size: 14px;
+    font-size: 16px;
     color: white;
     text-align: center;
 `;
 
-class DashSubs extends Component {
-    render(props) {
+const SubImg = styled.img`
+    width: 65px;
+    height: 80px;
+`;
+
+function DashSubs(props) {
         return (
             <Card className="card">
                 <div className="card-body">
                     <div className="row">
                         <div className="col">
-                            <CardText>Img</CardText>
+                            <SubImg src={props.image} alt={props.name} />
                         </div>
                         <div className="col">
-                            <CardText>Name</CardText>
+                            <CardText>{"Sub Name" || props.name}</CardText>
                         </div>
                         <div className="col">
-                            <CardText>Cost Per Month</CardText>
+                            <CardText>{"Monthly Cost" || "$" + props.cost}</CardText>
                         </div>
                         <div className="col">
-                            <CardText>Due Date</CardText>
+                            <CardText>{"Due Date" || "Due day: " + props.dueDate}</CardText>
                         </div>
                     </div>
                 </div>
             </Card>
         )
     }
-}
 
 export default DashSubs;

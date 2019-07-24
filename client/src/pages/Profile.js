@@ -1,14 +1,23 @@
 import React, { Component } from "react";
 import Navbar from "../components/Navbar.js";
-//import Header from "../components/Header.js";
+import Header from "../components/Header.js";
+import { createGlobalStyle } from 'styled-components';
+
+const ProfileStyle = createGlobalStyle`
+  body {
+    color: ${props => (props.whiteColor ? 'white' : 'black')};
+    background:  black;
+  }
+  `
 
 class Profile extends Component {
     render() {
         return (
-            <div>
+            <React.Fragment>
+                <ProfileStyle whiteColor />
+                <Header />
                 <Navbar />
-                <h1>Profile</h1>
-            </div>
+            </React.Fragment>
         )
     }
 }

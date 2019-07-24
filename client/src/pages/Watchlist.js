@@ -4,9 +4,14 @@ import Wrapper2 from "../components/Wrapper2.js";
 import Header from "../components/Header.js";
 import api from "../utils/mainAPI"
 import WatchlistCard from "../components/WatchlistCard.js";
+import { createGlobalStyle } from 'styled-components';
 
-
-
+const WatchlistStyle = createGlobalStyle`
+  body {
+    color: ${props => (props.whiteColor ? 'white' : 'black')};
+    background:  black;
+  }
+  `
 
 class Watchlist extends Component {
     state = {
@@ -17,7 +22,6 @@ class Watchlist extends Component {
     handleMovie = event => {
         event.preventDefault();
         this.searchMovie(this.state.search);
-
     };
 
     handleInputChange = event => {
@@ -32,44 +36,42 @@ class Watchlist extends Component {
         api.search(query)
             .then(res => {
                 this.setState({ result: res.data })
-
                 console.log(res.data)
-
             })
             .catch(err => console.log(err));
     };
 
     render() {
         return (
-            <div>
-                <Navbar />
-                <Wrapper2>
+            <React.Fragment>
+                <WatchlistStyle whiteColor />
+                <div>
                     <Header />
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-2">
-                                <p></p>
+                    <Navbar />
+                    <Wrapper2>
+                        <div className="container ">
+                            <br></br>
+                            <div className="row">
+                                <div className="col-2 mt-5">
+                                    <p></p>
+                                </div>
+                                <input type="text" className="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" name="search" onChange={this.handleInputChange} value={this.state.search}></input>
+                                <h1><button className="btn btn-danger" onClick={this.handleMovie}>Test</button></h1>
                             </div>
-                            <input type="text" className="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" name="search" onChange={this.handleInputChange} value={this.state.search}></input>
-                            <h1><button className="btn btn-danger" onClick={this.handleMovie}>Test</button></h1>
-                        </div>
-                        <div className="row">
-                            <div className="col-4">
-                                <WatchlistCard
-                                    result={this.state.result}></WatchlistCard>
-
-
-
+                            <div className="d-flex flex-wrap">
+                                {
+                                    this.state.result.map(element => {
+                                        console.log(element);
+                                        return <WatchlistCard results={element} />
+                                    })
+                                }
                             </div>
                         </div>
-
-
-                    </div>
-                </Wrapper2>
-            </div>
+                    </Wrapper2>
+                </div>
+            </React.Fragment>
         )
     }
 };
-
 
 export default Watchlist;
