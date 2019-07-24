@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Card = styled.div`
     width: 18rem;
-    
+    background-color: rgba(65, 65, 65, 0.80); 
 `;
 
 function SubscriptionCard() {
