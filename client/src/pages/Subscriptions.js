@@ -7,7 +7,7 @@ import Wrapper from "../components/Wrapper";
 import Wrapper2 from "../components/Wrapper2.js";
 import SearchBar from "../components/SearchBar";
 
-const GlobalStyle = createGlobalStyle`
+const SubscriptionStyle = createGlobalStyle`
   body {
     color: ${props => (props.whiteColor ? 'white' : 'black')};
     background:  black;
