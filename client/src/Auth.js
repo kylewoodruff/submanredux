@@ -10,7 +10,6 @@ import auth0 from 'auth0-js';
             responseType:"id_token",
             scope:"openid profile"
             });
-            console.log("This is your website" + process.env.REACT_APP_URL);
             
             this.getProfile = this.getProfile.bind(this);
             this.handleAuthentication = this.handleAuthentication.bind(this);
@@ -33,6 +32,8 @@ import auth0 from 'auth0-js';
         
           signIn() {
             this.auth0.authorize();
+            console.log("This is your website" + process.env.REACT_APP_URL);
+
           }
         
           handleAuthentication() {
