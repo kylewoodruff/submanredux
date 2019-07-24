@@ -4,8 +4,8 @@ import auth0 from 'auth0-js';
    constructor(){
         this.auth0 = new auth0.WebAuth({
             domain: "sub-merge.auth0.com",
-            clientID:"teNlTbyVB3lCq5OTWhmxEbkLJlLowDJN",
-            redirectUri:"http://localhost:3000/callback",
+            clientID: process.env.REACT_APP_CLIENTID||"teNlTbyVB3lCq5OTWhmxEbkLJlLowDJN",
+            redirectUri: process.env.REACT_APP_URL||"http://localhost:3000/callback",
             audience: "https://sub-merge.auth0.com/userinfo",
             responseType:"id_token",
             scope:"openid profile"
@@ -56,8 +56,8 @@ import auth0 from 'auth0-js';
         
           signOut() {
             this.auth0.logout({
-              returnTo: 'http://localhost:3000',
-              clientID: 'teNlTbyVB3lCq5OTWhmxEbkLJlLowDJN',
+              redirectUri: process.env.REACT_APP_URL||"http://localhost:3000/callback",
+              clientID: process.env.REACT_APP_CLIENTID||"teNlTbyVB3lCq5OTWhmxEbkLJlLowDJN",
             });
           }
           
