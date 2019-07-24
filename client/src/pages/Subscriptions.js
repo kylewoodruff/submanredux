@@ -12,7 +12,11 @@ const GlobalStyle = createGlobalStyle`
     color: ${props => (props.whiteColor ? 'white' : 'black')};
     background:  black;
   }
-  `
+  hr {
+    background-color: white;
+  }
+  `;
+
 
 class Subscriptions extends Component {
   render() {
@@ -32,7 +36,10 @@ class Subscriptions extends Component {
             <div className="container-fluid ml-5">
               <h4 className="text-left ml-5">My Subscriptions</h4>
               <SearchBar />
-              <SubscriptionCard />
+              <hr></hr>
+              <div className="row">
+                <SubscriptionCard />
+              </div>
             </div>
           </Wrapper>
         </Wrapper2>
