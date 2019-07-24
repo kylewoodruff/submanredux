@@ -56,11 +56,9 @@ class LandNav extends Component {
                 <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                        <NavText onClick={auth0Client.getProfile().name ||"Username" }>Login</NavText>
+                        <NavText onClick={auth0Client.signIn}>Login</NavText>
                         </li>
-                        <li className="nav-item">
-                            <NavText href="/signup">Sign Up</NavText>
-                        </li>
+                       
                     </ul>
                 </div>
             </Nav>
