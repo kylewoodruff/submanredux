@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import DashCard from "./DashCard.js";
 
 const Count = styled.h1`
-    font-size: 80px;
+    font-size: 60px;
     font-weight: bolder;
     color: white;
 `;
@@ -20,7 +20,7 @@ function DashSubCount(props) {
         return(
             <DashCard>
                 <CountText>Total Montly Subscriptions</CountText>
-                <Count>{props.children}</Count>
+                <Count>{"##" || props.subscriptionCount}</Count>
             </DashCard>
         )
     }
