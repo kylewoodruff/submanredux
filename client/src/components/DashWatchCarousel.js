@@ -1,17 +1,22 @@
 import React from "react";
-import Img from "../assets/images/netflixIcon.png";
+import Img from "../assets/images/movieP1.png";
 import styled from 'styled-components';
 
+const Carousel = styled.div`
+    margin-left: -28px;
+    margin-top: 10px;
+`;
+
 const Image = styled.img`
-  height: 170px;
-  width: 120px;
+  height: 200px;
+  width: 163px;
   margin-right: 10px;
 `;
 
 
 function DashWatchCarousel(props) {
     return (
-        <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
+        <Carousel id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
             <ol className="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -38,9 +43,6 @@ function DashWatchCarousel(props) {
                         <div className="col-xs-2">
                             <Image src={Img} alt="submerge" />
                         </div>
-                        <div className="col-xs-2">
-                            <Image src={Img} alt="submerge" />
-                        </div>
                     </div>
                 </div>
                 <div className="carousel-item">
@@ -63,16 +65,10 @@ function DashWatchCarousel(props) {
                         <div className="col-xs-2">
                             <Image src={Img} alt="submerge" />
                         </div>
-                        <div className="col-xs-2">
-                            <Image src={Img} alt="submerge" />
-                        </div>
                     </div>
                 </div>
                 <div className="carousel-item">
                     <div className="row ml-1">
-                        <div className="col-xs-2">
-                            <Image src={Img} alt="submerge" />
-                        </div>
                         <div className="col-xs-2">
                             <Image src={Img} alt="submerge" />
                         </div>
@@ -102,7 +98,7 @@ function DashWatchCarousel(props) {
                 <span className="carousel-control-next-icon" aria-hidden="true"></span>
                 <span className="sr-only">Next</span>
             </a>
-        </div>
+        </Carousel>
     )
 }
 

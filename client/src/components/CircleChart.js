@@ -1,6 +1,14 @@
 import React, { Component } from "react";
 import Chart from "react-apexcharts";
-//import styled from 'styled-components';
+import DashCard from "../components/DashCard.js";
+import styled from 'styled-components';
+
+
+const ChartTitle = styled.h6`
+    color: white;
+    margin: 15px 2px 5px 2px;
+    font-weight: bold;
+`;
 
 class CircleChart extends Component {
     constructor(props) {
@@ -10,11 +18,16 @@ class CircleChart extends Component {
             options: {
                 chart: {
                     fontFamily: "Helvetica, Arial, sans-serif",
-                    background: "rgb(30, 30, 30)",
-                    foreColor: 'white'
+                    foreColor: 'white',
+                    labelColor: "white",
+                    animations: {
+                        enabled: true,
+                        easing: "easein",
+                        speed: 1600
+                    }
                 },
-                colors: [function({ value, seriesIndex, w }) {
-                    if(value < 25) {
+                colors: [function ({ value, seriesIndex, w }) {
+                    if (value < 25) {
                         return '#778AFF'
                     } else if (value >= 25 && value < 50) {
                         return '#3954FF'
@@ -23,29 +36,24 @@ class CircleChart extends Component {
                     } else {
                         return '#0023FF'
                     }
-                  }],
-                 labels: ["% of Total Monthly Cost"],
-                // theme: {
-                //     monochrome: {
-                //         enabled: true,
-                //         color: "#0325FB",
-                //         shadeTo: "dark",
-                //         shadeIntensity: 0.19
-                //     }     
-                // }
+                }],
+                labels: [""]
             },
-            series: [55],
-            labels: ["Next Due"]
+            series: [60],
         }
     }
     render() {
         return (
-            <Chart
-                options={this.state.options}
-                series={this.state.series}
-                type="radialBar"
-                height={255}
-            />
+            <DashCard>
+                <ChartTitle className="text-center">Monthly Subscription Cost % Due This Week</ChartTitle>
+                <Chart
+                    options={this.state.options}
+                    series={this.state.series}
+                    type="radialBar"
+                    height={250}
+                    width={"100%"}
+                />
+            </DashCard>
         )
     }
 }
