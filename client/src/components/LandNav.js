@@ -58,9 +58,7 @@ class LandNav extends Component {
                         <li className="nav-item">
                         <NavText onClick={auth0Client.signIn}>Login</NavText>
                         </li>
-                        <li className="nav-item">
-                            <NavText href="/signup">Sign Up</NavText>
-                        </li>
+                       
                     </ul>
                 </div>
             </Nav>

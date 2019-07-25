@@ -79,7 +79,7 @@ function Jumbotron() {
             <Slogan className="text-center">Diving deep to keep your subsciptions neat</Slogan>
             <SubSlogan className="text-center">All of your subscriptions in one place</SubSlogan>
             <div className="text-center">
-                <SignUp className="btn-lg" href="/signup" role="button">Sign Up Now!</SignUp>
+                <SignUp className="btn-lg" onClick={auth0Client.signIn} role="button">Sign Up Now!</SignUp>
                     <User className="text-center user">Already a user?</User>
                     <JumboSign className="btn btn-sm jumboSign" onClick={auth0Client.signIn}
                         role="button">Login</JumboSign>

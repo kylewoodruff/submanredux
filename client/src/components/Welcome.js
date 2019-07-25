@@ -10,7 +10,7 @@ const Welcome = styled.h5`
 class WelcomeStatement extends Component {
     render() {
         return(
-            <Welcome className="text-center">Welcome to your Dashboard {"Username" || auth0Client.getProfile().name}!</Welcome>
+            <Welcome className="text-center">Welcome to your Dashboard {auth0Client.getProfile().name ||"Username" } !</Welcome>
         )
     }
 }

@@ -168,7 +168,7 @@ class Navbar extends Component {
                             <a href="/profile" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <FaNav className="fa fa-user"></FaNav>
                                 <NavText2 className="username">
-                                {"Username" || auth0Client.getProfile().name}
+                                { auth0Client.getProfile().name}
 
                                 </NavText2>
                             </a>
