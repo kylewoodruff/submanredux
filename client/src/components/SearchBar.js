@@ -1,24 +1,62 @@
 import React from "react";
 import styled from 'styled-components';
 
+const Searchinput = styled.input`
+    color: white;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    caret-color: transparent;
+    line-height: 40px;
+    transition: width 0.4s linear;
+`;
+
+const Searchicon = styled.a`
+    height: 40px;
+    width: 40px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: white;
+`;
+
+const Searchbar = styled.div`
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 60px;
+    background-color: rgba(65, 65, 65, 0.80);
+    border-radius: 30px;
+    padding: 10px;
+    
+    :hover > ${Searchinput} {
+        padding: 0 10px;
+        width: 450px;
+        caret-color: white;
+        transition: width 0.4s linear;
+    }
+
+    :hover > ${Searchicon} {
+        background: white;
+        color: blue;
+    }
+
+`;
+
+
 
 function SearchBar() {
     return (
-        <div class="row">
-            <div class="col-12 col-md-10 col-lg-8">
-                <form class="card card-sm">
-                    <div class="card-body row no-gutters align-items-center">
-                        <div class="col-auto">
-                            <i class="fa fa-search h4 text-body"></i>
-                        </div>
-                        <div class="col">
-                            <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Search topics or keywords"></input>
-                        </div>
-                        <div class="col-auto">
-                            <button class="btn btn-lg btn-success" type="submit">Search</button>
-                        </div>
-                    </div>
-                </form>
+        <div className="row">
+            <div className="container h-100">
+                <div className="d-flex justify-content-left h-100">
+                    <Searchbar>
+                        <Searchinput type="text" name="search" placeholder="Search..."></Searchinput>
+                        <Searchicon href="#" className="search_icon"><i className="fa fa-search"></i></Searchicon>
+                    </Searchbar>
+                </div>
             </div>
         </div>
 
