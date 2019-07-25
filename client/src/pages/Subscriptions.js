@@ -34,7 +34,7 @@ class Subscriptions extends Component {
           <Navbar />
           <Wrapper>
             <div className="container-fluid ml-5">
-              <h4 className="text-left ml-5">My Subscriptions</h4>
+              <h4 className="text-left">My Subscriptions</h4>
               <SearchBar />
               <hr></hr>
               <div className="row">
