@@ -1,6 +1,6 @@
 /* eslint-disable global-require */
 module.exports = {
-  User: require('./user'),
-  Watchlist: require('./watchlist'),
-  Subs: require('./subs'),
+  User: require('./User'),
+  Watchlist: require('./Watchlist'),
+  Subs: require('./Subs'),
 };
