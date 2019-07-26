@@ -6,6 +6,7 @@ import SubscriptionCard from "../components/SubscriptionCard";
 import Wrapper from "../components/Wrapper"; 
 import Wrapper2 from "../components/Wrapper2.js";
 import SearchBar from "../components/SearchBar";
+import AddSub from "../components/AddSub.js";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -32,6 +33,7 @@ class Subscriptions extends Component {
         <br></br>
         <Wrapper2>
           <Navbar />
+          <AddSub />
           <Wrapper>
             <div className="container-fluid ml-5">
               <h4 className="text-left">My Subscriptions</h4>
