@@ -10,6 +10,7 @@ const userSchema = new Schema({
   password: { type: String, required: false, unique: false },
   googleId: { type: String, required: false, unique: true },
   facebookId: { type: String, required: false, unique: true },
+  img_Avatar: { type: String, required: false, unique: false },
   createdate: { type: Date, default: Date.now },
 
   subs: [
