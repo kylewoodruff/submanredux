@@ -5,7 +5,7 @@ import auth0 from 'auth0-js';
         this.auth0 = new auth0.WebAuth({
             domain: "sub-merge.auth0.com",
             clientID: "teNlTbyVB3lCq5OTWhmxEbkLJlLowDJN"||process.env.REACT_APP_CLIENTID,
-            redirectUri: "http://localhost:3000/callback"||process.env.REACT_APP_URL,
+            redirectUri: "http://localhost:3000/callback" || process.env.REACT_APP_URL,
             audience: "https://sub-merge.auth0.com/userinfo",
             responseType:"id_token",
             scope:"openid profile"
