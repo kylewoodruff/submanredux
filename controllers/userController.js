@@ -41,10 +41,5 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.json(err));
   },
-  populated(req, res) {
-    db.User.find({})
-      .populate('Subs')
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.json(err));
-  },
+  
 };

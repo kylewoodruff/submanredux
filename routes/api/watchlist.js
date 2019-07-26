@@ -1,17 +1,16 @@
-const router = require("express").Router();
-const watchlistController = require("../../controllers/watchlistController");
+const router = require('express').Router();
+const watchlistController = require('../../controllers/watchlistController');
 
 
-router.route("/")
+router.route('/')
   .get(watchlistController.findAll)
   .post(watchlistController.create);
 
 
 router
-  .route("/:id")
+  .route('/:id')
   .get(watchlistController.findById)
   .put(watchlistController.update)
-  .delete(watchlistController.remove)
-  .put(watchlistController.populate);
+  .delete(watchlistController.remove);
 
 module.exports = router;

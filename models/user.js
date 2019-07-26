@@ -7,20 +7,20 @@ const userSchema = new Schema({
   email: { type: String, required: true, unique: true },
   firstName: { type: String, required: true, unique: true },
   lastName: { type: String, required: true, unique: true },
-  password: { type: String, required: true, unique: false },
+  password: { type: String, required: false, unique: false },
   googleId: { type: String, required: false, unique: true },
   facebookId: { type: String, required: false, unique: true },
-  
-  date: { type: Date, default: Date.now },
+  img_Avatar: { type: String, required: false, unique: false },
+  createdate: { type: Date, default: Date.now },
 
-  Subs: [
+  subs: [
     {
       type: Schema.Types.ObjectId,
       ref: 'Subs',
     },
   ],
 
-  Watchlist: [
+  watchlist: [
     {
 
       type: Schema.Types.ObjectId,
