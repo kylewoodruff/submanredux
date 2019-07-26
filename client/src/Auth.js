@@ -4,11 +4,13 @@ import auth0 from 'auth0-js';
    constructor(){
         this.auth0 = new auth0.WebAuth({
             domain: "sub-merge.auth0.com",
-            clientID: process.env.REACT_APP_CLIENTID||"teNlTbyVB3lCq5OTWhmxEbkLJlLowDJN",
-            redirectUri: "https://submanredux-stg.herokuapp.com/callback",           
-             audience: "https://sub-merge.auth0.com/userinfo",
+            clientID: "teNlTbyVB3lCq5OTWhmxEbkLJlLowDJN",
+            // redirectUri: "https://submanredux-stg.herokuapp.com/callback",  
+            redirectUri: "http://localhost:3000/callback",
+         
+            audience: "https://sub-merge.auth0.com/userinfo",
             responseType:"id_token",
-            scope:"openid profile"
+            scope:"openid profile email"
             });
             
             this.getProfile = this.getProfile.bind(this);
@@ -16,6 +18,7 @@ import auth0 from 'auth0-js';
             this.isAuthenticated = this.isAuthenticated.bind(this);
             this.signIn = this.signIn.bind(this);
             this.signOut = this.signOut.bind(this);
+
           }
         
           getProfile() {
@@ -32,7 +35,7 @@ import auth0 from 'auth0-js';
         
           signIn() {
             this.auth0.authorize();
-            console.log("This is your website" + process.env.REACT_APP_URL);
+            
 
           }
         
@@ -58,7 +61,9 @@ import auth0 from 'auth0-js';
         
           signOut() {
             this.auth0.logout({
-              redirectUri: "https://submanredux-stg.herokuapp.com/callback",           
+              // redirectUri: "https://submanredux-stg.herokuapp.com/callback",   
+              redirectUri: "http://localhost:3000/callback",
+        
               clientID: "teNlTbyVB3lCq5OTWhmxEbkLJlLowDJN",
             });
           }
