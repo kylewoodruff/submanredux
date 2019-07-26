@@ -3,6 +3,9 @@ import styled from 'styled-components';
 
 const Card = styled.div`
     background: rgba(50, 50, 50, 0.50);
+    border-radius: 15px;
+    padding: 5px 0px 5px 0px;
+    margin: 10px 10px 0px -15px;
 `;
 
 const CardText = styled.p`
@@ -12,7 +15,7 @@ const CardText = styled.p`
 `;
 
 const SubImg = styled.img`
-    width: 65px;
+    width: 60px;
     height: 80px;
 `;
 

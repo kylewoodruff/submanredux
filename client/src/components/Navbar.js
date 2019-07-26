@@ -159,7 +159,7 @@ class Navbar extends Component {
         const signOut = () => {
             auth0Client.signOut();
             props.history.replace('/');
-          };
+        };
         return (
             <Area>
                 <MainMenu>
@@ -168,13 +168,12 @@ class Navbar extends Component {
                             <a href="/profile" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <FaNav className="fa fa-user"></FaNav>
                                 <NavText2 className="username">
-                                { auth0Client.getProfile().name}
-
+                                    {auth0Client.getProfile().name}
                                 </NavText2>
                             </a>
                             <DropdownMenu className="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <DropdownItem className="dropdown-item" href="/profile"> <FaProfile className="fa fa-user fa-profile"></FaProfile> Profile</DropdownItem>
-                                <DropdownItem onClick={() => {signOut()}} className="dropdown-item"> <FaProfile className="fa fa-sign-out fa-profile"></FaProfile> Logout</DropdownItem>
+                                <DropdownItem onClick={() => { signOut() }} className="dropdown-item"> <FaProfile className="fa fa-sign-out fa-profile"></FaProfile> Logout</DropdownItem>
                             </DropdownMenu>
                         </li>
                         <li>

@@ -7,6 +7,8 @@ import auth0 from 'auth0-js';
 
 
             clientID: process.env.REACT_APP_CLIENTID||"teNlTbyVB3lCq5OTWhmxEbkLJlLowDJN",
+            //redirectUri: "http://localhost:3000/callback",
+            // redirectUri: "http://localhost:3000/callback",
             redirectUri: "https://submanredux-stg.herokuapp.com/callback",           
              audience: "https://sub-merge.auth0.com/userinfo",
 
@@ -61,7 +63,9 @@ import auth0 from 'auth0-js';
         
           signOut() {
             this.auth0.logout({
-              redirectUri: "https://submanredux-stg.herokuapp.com/callback",           
+               redirectUri: "https://submanredux-stg.herokuapp.com/callback",
+              // redirectUri: "http://localhost:3000/callback",
+              //redirectUri: "http://localhost:3000/callback",           
               clientID: "teNlTbyVB3lCq5OTWhmxEbkLJlLowDJN",
             });
           }
@@ -78,7 +82,7 @@ import auth0 from 'auth0-js';
         }
 
 
-
+        
         const auth0Client = new Auth();
         
         export default auth0Client;
