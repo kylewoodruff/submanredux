@@ -14,10 +14,17 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+
   create(req, res) {
+    console.log("Reading request.body")
+    console.log(req.body)
     db.Watchlist
-      .create(req.body)
-      .then(dbModel => res.json(dbModel))
+      .findOneAndUpdate(req.body.movie_id, req.body, { upsert: true, new: true })
+      // eslint-disable-next-line arrow-body-style
+      .then((dbWatchlist) => {
+        console.log(dbWatchlist)
+      })
+      .then(dbUser => res.json(dbUser))
       .catch(err => res.status(422).json(err));
   },
   update(req, res) {

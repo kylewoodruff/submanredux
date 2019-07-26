@@ -17,6 +17,12 @@ export default {
    
     saveUser: function(userData) {
       return axios.post("/api/user", userData);
+    },
+    saveWatchlist: function (userData){ 
+      console.log("This is inside userDate ");
+     console.log(userData)
+      return axios.post('/api/watchlist', userData);
     }
+    
     
   };
