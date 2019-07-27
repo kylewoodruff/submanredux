@@ -3,8 +3,8 @@ import auth0 from 'auth0-js';
 class Auth {
   constructor() {
     this.auth0 = new auth0.WebAuth({
-      domain: "https://sub-merge.auth0.com",
-      // domain: "sub-merge.auth0.com",
+      //domain: "https://sub-merge.auth0.com",
+      domain: "sub-merge.auth0.com",
       clientID: process.env.REACT_APP_CLIENTID || "teNlTbyVB3lCq5OTWhmxEbkLJlLowDJN",
       //redirectUri: "http://localhost:3000/callback",
       redirectUri: "https://submanredux-stg.herokuapp.com/callback",           
