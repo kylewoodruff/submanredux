@@ -31,5 +31,9 @@ export default {
         }
       });
 
-  }
+  },
+  getSubs: function () {
+      return axios.get('/api/subs')
+    }
 }
+
