@@ -23,7 +23,9 @@ export default {
      console.log(userData)
       return axios.post('/api/watchlist', userData);
     },
-    getSubs: function(userData) {
-      return axios.get('/api/subscriptions', userData);
+    
+    getSubs: function () {
+      return axios.get('/api/subs')
     }
+    
   };

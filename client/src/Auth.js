@@ -7,10 +7,10 @@ class Auth {
       clientID: process.env.REACT_APP_CLIENTID || "teNlTbyVB3lCq5OTWhmxEbkLJlLowDJN",
       redirectUri: "http://localhost:3000/callback",
       //redirectUri: "https://submanredux-stg.herokuapp.com/callback",           
+      //redirectUri: "https://submanredux-stg.herokuapp.com/callback"
       audience: "https://sub-merge.auth0.com/userinfo",
-
       responseType: "id_token",
-      scope: "openid profile"
+      scope: "openid profile email"
     });
 
     this.getProfile = this.getProfile.bind(this);
@@ -35,7 +35,6 @@ class Auth {
   signIn() {
     this.auth0.authorize();
     console.log("This is your website" + process.env.REACT_APP_URL);
-
   }
 
   handleAuthentication() {
@@ -62,6 +61,8 @@ class Auth {
     this.auth0.logout({
       //redirectUri: "https://submanredux-stg.herokuapp.com/callback",
       redirectUri: "http://localhost:3000/callback",        
+      //  redirectUri: "https://submanredux-stg.herokuapp.com/callback",
+      redirectUri: "http://localhost:3000/callback",
       clientID: "teNlTbyVB3lCq5OTWhmxEbkLJlLowDJN",
     });
   }
@@ -76,7 +77,6 @@ class Auth {
     });
   }
 }
-
 const auth0Client = new Auth();
 
 export default auth0Client;

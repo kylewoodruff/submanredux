@@ -1,6 +1,6 @@
 import React from 'react';
-import styled from 'styled-components'
-import API from '../utils/Api'
+import styled from 'styled-components';
+import API from '../utils/Api';
 
 
 const Input = styled.img`
