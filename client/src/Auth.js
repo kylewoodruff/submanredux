@@ -54,7 +54,28 @@ class Auth {
     this.profile = authResult.idTokenPayload;
     // set the time that the id token will expire at
     this.expiresAt = authResult.idTokenPayload.exp * 1000;
-  }
+
+    }
+        
+    signOut() {
+      this.auth0.logout({
+        //  redirectUri: "https://submanredux-stg.herokuapp.com/callback",
+        redirectUri: "http://localhost:3000/callback",           
+        clientID: "teNlTbyVB3lCq5OTWhmxEbkLJlLowDJN",
+      });
+    }
+          
+    silentAuth() {
+      return new Promise((resolve, reject) => {
+        this.auth0.checkSession({}, (err, authResult) => {
+          if (err) return reject(err);
+          this.setSession(authResult);
+          resolve();
+        });
+      });
+    }
+  }    
+
 
   signOut() {
     this.auth0.logout({
