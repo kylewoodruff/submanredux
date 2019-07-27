@@ -12,14 +12,14 @@ const Count = styled.h1`
 const CountText = styled.h6`
     color: white;
     font-weight: bold;
-    margin: 15px 2px 5px 2px;
+    margin: 15px 1px 5px 1px;
 `;
 
 function DashSubCount(props) {
    
         return(
             <DashCard>
-                <CountText>Total Montly Subscriptions</CountText>
+                <CountText>Total Monthly Subscriptions</CountText>
                 <Count>{"##" || props.subscriptionCount}</Count>
             </DashCard>
         )

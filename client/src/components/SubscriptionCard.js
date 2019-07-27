@@ -20,6 +20,13 @@ const ImgWrapper = styled.div`
 `;
 
 function SubscriptionCard(props) {
+    // openNav() {
+    //     document.getElementById("mySidenav").style.width = "500px";
+    //     // this.setState({
+    //     //     hideAddBtn: true
+    //     // })
+    // }
+
     return (
         <Card className="card col-lg-6">
             <div className="card-body d-flex align-items-center">
