@@ -78,9 +78,38 @@ import auth0 from 'auth0-js';
             });
           }
         }
+        this.setSession(authResult);
+        resolve();
+      });
+    })
+  }
 
+  setSession(authResult) {
+    this.idToken = authResult.idToken;
+    this.profile = authResult.idTokenPayload;
+    // set the time that the id token will expire at
+    this.expiresAt = authResult.idTokenPayload.exp * 1000;
+  }
 
+  signOut() {
+    this.auth0.logout({
+      redirectUri: "https://submanredux-stg.herokuapp.com/callback",
+      //redirectUri: "http://localhost:3000/callback",        
+      clientID: "teNlTbyVB3lCq5OTWhmxEbkLJlLowDJN",
+    });
+  }
 
-        const auth0Client = new Auth();
-        
-        export default auth0Client;
+  silentAuth() {
+    return new Promise((resolve, reject) => {
+      this.auth0.checkSession({}, (err, authResult) => {
+        if (err) return reject(err);
+        this.setSession(authResult);
+        resolve();
+      });
+    });
+  }
+}
+
+const auth0Client = new Auth();
+
+export default auth0Client;

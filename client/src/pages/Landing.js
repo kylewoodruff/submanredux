@@ -22,7 +22,7 @@ class Landing extends Component {
     render() {
         return (
             <React.Fragment>
-                <LandingStyle />
+                <LandingStyle whiteColor/>
                 <div className="container-fluid landing">
                     <LandNav />
                     <div className="row">

@@ -18,6 +18,22 @@ const FaNav = styled.i`
     }
 `;
 
+const FaNav2 = styled.i`
+    position: relative;
+    display: table-cell;
+    width: 80px;
+    height: 40px;
+    text-align: center;
+    vertical-align: middle;
+    font-size:20px;
+    color:rgb(202, 202, 202);
+    padding-left: 3px;
+
+    :hover {
+        color: white;
+    }
+`;
+
 const FaProfile = styled.i`
     margin: 5px 10px 5px -10px;
     width: 20px;
@@ -124,13 +140,13 @@ const NavText = styled.span`
 `;
 
 const NavText2 = styled.span`
-    position:relative;
-    display:table-cell;
-    vertical-align:middle;
-    width:185px;
-    color:rgb(202, 202, 202);
-    font-family: 'Titillium Web', sans-serif;
-    margin-left: -5px;
+position:relative;
+display:table-cell;
+vertical-align:middle;
+width:185px;
+color:rgb(202, 202, 202);
+font-family: 'Titillium Web', sans-serif;
+padding-left: 2.5px;
 
     :hover {
         color: white;
@@ -140,6 +156,7 @@ const NavText2 = styled.span`
 const DropdownMenu = styled.div`
     background-color: rgb(49, 49, 49);
     margin-left: 55px;
+    color: rgb(202, 202, 202);
 `;
 
 const DropdownItem = styled.a`
@@ -159,22 +176,21 @@ class Navbar extends Component {
         const signOut = () => {
             auth0Client.signOut();
             props.history.replace('/');
-          };
+        };
         return (
             <Area>
                 <MainMenu>
                     <ul>
                         <li className="nav-item dropdown">
                             <a href="/profile" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <FaNav className="fa fa-user"></FaNav>
+                                <FaNav2 className="fa fa-user"></FaNav2>
                                 <NavText2 className="username">
-                                { auth0Client.getProfile().name}
-
+                                    {auth0Client.getProfile().name}
                                 </NavText2>
                             </a>
                             <DropdownMenu className="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <DropdownItem className="dropdown-item" href="/profile"> <FaProfile className="fa fa-user fa-profile"></FaProfile> Profile</DropdownItem>
-                                <DropdownItem onClick={() => {signOut()}} className="dropdown-item"> <FaProfile className="fa fa-sign-out fa-profile"></FaProfile> Logout</DropdownItem>
+                                <DropdownItem onClick={() => { signOut() }} className="dropdown-item"> <FaProfile className="fa fa-sign-out fa-profile"></FaProfile> Logout</DropdownItem>
                             </DropdownMenu>
                         </li>
                         <li>

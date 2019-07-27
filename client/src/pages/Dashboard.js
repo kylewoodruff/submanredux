@@ -48,8 +48,8 @@ function Dashboard(props) {
 
                     <div className="container-fluid">
                         <h3 className="text-left ml-5">Subscriptions</h3>
-                        <div className="ml-5 d-flex flex-wrap justify-content-around align-items-center">
-                            <div className="d-flex flex-grow-1">
+                        <div className="ml-5 d-flex flex-wrap justify-content-center align-items-stretch">
+                            <div className="d-flex">
                                 <DashSubs />
                             </div>
                             <div className="d-flex">
