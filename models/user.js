@@ -5,11 +5,10 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
   email: { type: String, required: true, unique: true },
-  firstName: { type: String, required: true, unique: true },
-  lastName: { type: String, required: true, unique: true },
+  firstName: { type: String, required: false, unique: true },
+  lastName: { type: String, required: false, unique: true },
   password: { type: String, required: false, unique: false },
-  googleId: { type: String, required: false, unique: true },
-  facebookId: { type: String, required: false, unique: true },
+  id: { type: String, required: true, unique: true },
   img_Avatar: { type: String, required: false, unique: false },
   createdate: { type: Date, default: Date.now },
 
@@ -22,9 +21,7 @@ const userSchema = new Schema({
 
   watchlist: [
     {
-
       type: Schema.Types.ObjectId,
-
       ref: 'Watchlist',
     },
   ],
