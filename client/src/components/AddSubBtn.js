@@ -8,9 +8,10 @@ bottom: 0;
 display: block;
 width: 56px;
 height: 56px;
-background-color: rgb(30, 30, 30);
-border-radius: 50%;
+background-color: rgba(65, 65, 65, 0.80);
 box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+color: rgba(65, 65, 65);
+border-radius: 50%;
 margin-left: 600px;
 margin-bottom: 35px;
 
@@ -23,6 +24,7 @@ const AddBtn = styled.div`
 position: fixed;
 color: black;
 background: black;
+background-color: rgba(65, 65, 65, 0.80);
 left: 50%;
 bottom: 15px;
 margin-left: -85px;
@@ -39,20 +41,18 @@ margin: 13px 13px 13px 13px;
 `;
 
 class AddSubBtn extends Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         isHidden: false,
-    //     }
-    // }
+    state = {
+        isVisible: true
+    }
 
     openNav() {
         document.getElementById("mySidenav").style.width = "500px";
+        document.getElementById("addBtn").style.display = "none";
     }
 
     render() {
         return (
-            <div>
+            <div id="addBtn">
                 <span onClick={this.openNav} data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <AddBtn>
                         <Fab>
@@ -60,6 +60,7 @@ class AddSubBtn extends Component {
                         </Fab>
                     </AddBtn>
                 </span>
+
             </div>
         )
     }

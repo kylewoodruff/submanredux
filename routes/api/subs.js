@@ -11,7 +11,6 @@ router
   .route('/:id')
   .get(subsController.findById)
   .put(subsController.update)
-  .delete(subsController.remove)
-  .put(subsController.populate);
+  .delete(subsController.remove);
 
 module.exports = router;

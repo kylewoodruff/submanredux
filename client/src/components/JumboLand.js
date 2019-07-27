@@ -53,6 +53,7 @@ const JumboSign = styled.a`
     :hover {
         color: rgb(39, 111, 219);
         text-decoration: none;
+        cursor: pointer;
     }
 `;
 
@@ -70,6 +71,7 @@ const SignUp = styled.a`
     :hover {
         color: rgb(0, 174, 255);
         text-decoration: none;
+        cursor: pointer;
     }
 `;
 

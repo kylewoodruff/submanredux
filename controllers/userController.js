@@ -17,7 +17,7 @@ module.exports = {
   },
   create(req, res) {
     db.User
-      .create(req.body)
+      .findOneAndUpdate(req.body.id, req.body, { upsert: true, new: true })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
@@ -41,5 +41,5 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.json(err));
   },
-  
+
 };

@@ -6,6 +6,7 @@ import SubscriptionCard from "../components/SubscriptionCard";
 import Wrapper from "../components/Wrapper"; 
 import Wrapper2 from "../components/Wrapper2.js";
 import SearchBar from "../components/SearchBar";
+import API from "../utils/Api.js";
 import AddSub from "../components/AddSub.js";
 
 const GlobalStyle = createGlobalStyle`
@@ -20,6 +21,20 @@ const GlobalStyle = createGlobalStyle`
 
 
 class Subscriptions extends Component {
+  state = {
+    subscriptions: []
+  };
+
+  componentDidMount() {
+    this.loadSubscriptions();
+  }
+
+  loadSubscriptions = () => {
+    API.getSubs()
+      .then(res => this.setState({ subscriptions: res.data }))
+      .catch(err => console.log(err));
+  };
+
   render() {
     return (
       <React.Fragment>
@@ -31,12 +46,13 @@ class Subscriptions extends Component {
         <br></br>
         <br></br>
         <br></br>
+        
         <Wrapper2>
           <Navbar />
           <AddSub />
           <Wrapper>
             <div className="container-fluid ml-5">
-              <h4 className="text-left">My Subscriptions</h4>
+              <h4 className="text-left mb-3 mt-3">My Subscriptions</h4>
               <SearchBar />
               <hr></hr>
               <div className="row">
