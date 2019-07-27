@@ -10,6 +10,7 @@ import DashSubCount from "../components/DashSubCount.js";
 import WelcomeStatement from "../components/Welcome.js";
 //import styled from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
+import auth0Client from '../Auth';
 
 const DashboardStyle = createGlobalStyle`
   body {
@@ -18,7 +19,9 @@ const DashboardStyle = createGlobalStyle`
   }
   `
 
+
 function Dashboard(props) {
+
     return (
         <React.Fragment>
             <DashboardStyle whiteColor />

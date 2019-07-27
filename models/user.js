@@ -14,15 +14,17 @@ const userSchema = new Schema({
 
   subs: [
     {
-      type: Schema.Types.ObjectId,
-      ref: 'Subs',
+      subscriptionName: { type: String },
+      monthlyCost: { type: String },
+      // Add due date
+
     },
   ],
 
   watchlist: [
     {
-      type: Schema.Types.ObjectId,
-      ref: 'Watchlist',
+      movie_id: { type: String },
+      title: { type: String },
     },
   ],
 });
