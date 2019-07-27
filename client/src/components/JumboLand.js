@@ -76,7 +76,7 @@ const SignUp = styled.a`
 function Jumbotron() {
     return (
         <Jumbo>
-            <Slogan className="text-center">Diving deep to keep your subsciptions neat</Slogan>
+            <Slogan className="text-center">Diving deep to keep your subscriptions neat</Slogan>
             <SubSlogan className="text-center">All of your subscriptions in one place</SubSlogan>
             <div className="text-center">
                 <SignUp className="btn-lg" onClick={auth0Client.signIn} role="button">Sign Up Now!</SignUp>
