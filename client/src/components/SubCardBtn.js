@@ -5,6 +5,10 @@ const ActionButton = styled.a`
     margin-left: 15px;
     color: white;
     font-size: 1.5em;
+
+    :hover {
+        color: #0325FB;
+    }
 `;
 
 class SubCardBtn extends Component {

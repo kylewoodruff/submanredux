@@ -6,8 +6,7 @@ class Auth {
       domain: "sub-merge.auth0.com",
       clientID: process.env.REACT_APP_CLIENTID || "teNlTbyVB3lCq5OTWhmxEbkLJlLowDJN",
       redirectUri: "http://localhost:3000/callback",
-      //redirectUri: "https://submanredux-stg.herokuapp.com/callback",           
-      //redirectUri: "https://submanredux-stg.herokuapp.com/callback"
+      //redirectUri: "https://submanredux-stg.herokuapp.com/callback",
       audience: "https://sub-merge.auth0.com/userinfo",
       responseType: "id_token",
       scope: "openid profile email"
@@ -60,8 +59,6 @@ class Auth {
   signOut() {
     this.auth0.logout({
       //redirectUri: "https://submanredux-stg.herokuapp.com/callback",
-      redirectUri: "http://localhost:3000/callback",        
-      //  redirectUri: "https://submanredux-stg.herokuapp.com/callback",
       redirectUri: "http://localhost:3000/callback",
       clientID: "teNlTbyVB3lCq5OTWhmxEbkLJlLowDJN",
     });
