@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import DatePicker from "react-datepicker";
-import Add from "../assets/images/add.png";
+import AddSubBtn from "../components/AddSubBtn.js";
+import DatePick from "../components/DatePick.js";
 import styled from 'styled-components';
 
 const Form = styled.form`
@@ -37,43 +37,8 @@ margin-left: 50px;
 
 :hover {
     color: white;
+    text-decoration: none;
 }
-`;
-
-const AddBtn = styled.span`
-position: absolute;
-bottom: 0;
-display: block;
-width: 56px;
-height: 56px;
-background-color:rgb(30, 30, 30);
-border-radius: 50%;
-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
-
-:hover {
-    background-color: black;
-}
-`;
-
-const Fab = styled.div`
-position: fixed;
-color: black;
-background: black;
-left: 50%;
-bottom: 15px;
-margin-left: -85px;
-z-index: 999;
-`;
-
-const Plus = styled.i`
-display: inline-block;
-background: url{"${Add}"};
-background-repeat: no-repeat;
-background-position: center;
-height: 30px;
-width: 30px;
-background-size: cover;
-margin: 13px 13px 13px 13px;
 `;
 
 const Main = styled.div`
@@ -81,23 +46,29 @@ transition: margin-left .5s;
 padding: 20px;
 `;
 
-class AddSub extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            startDate: new Date()
-        };
-        this.handleChange = this.handleChange.bind(this);
-    }
+const Submit = styled.button`
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    margin-top: 5px;
 
-    handleChange(date) {
-        this.setState({
-            startDate: date
-        });
+    :hover {
+        background-color: #0325FB;
+        color: white;
+        border: none;
+    }
+`;
+
+class AddSub extends Component {
+    state = {
+        isHidden: false
     }
 
     openNav() {
-        document.getElementById("mySidenav").style.width = "600px";
+        document.getElementById("mySidenav").style.width = "500px";
+        this.setState({
+            isHidden: true
+        })
     }
 
     closeNav() {
@@ -119,23 +90,14 @@ class AddSub extends Component {
                     </div>
                     <div className="form-group">
                         <label for="dueDate">Next Due Date</label>
-                        <DatePicker 
-                        dateFormat="yyyy/MM/dd"
-                        selected={this.state.startDate} 
-                        onChange={this.handleChange} 
-                        />
+                        <DatePick />
                     </div>
-                    
+                    <Submit type="button" class="btn submit btn-sm">Submit</Submit>
+
                 </Form>
 
                 {/* <!-- Use any element to open the sidenav --> */}
-                <AddBtn onClick={this.openNav} className="fab-action-button" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <Fab>
-                        <span>
-                            <Plus />
-                        </span>
-                    </Fab>
-                </AddBtn>
+                <AddSubBtn />
 
                 {/* <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page --> */}
                 <Main>
