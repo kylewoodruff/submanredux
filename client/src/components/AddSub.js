@@ -12,11 +12,11 @@ height: 100%;
 width: 0; 
 position: fixed; 
 z-index: 1; 
-top: 1; 
+top: 0; 
 right: 0;
 background-color: rgb(30, 30, 30);
 overflow-x: hidden; 
-padding-top: 100px; 
+padding-top: 75px; 
 transition: 0.5s;
 z-index: 1000;
 `;
@@ -75,6 +75,10 @@ class AddSub extends Component {
         document.getElementById("mySidenav").style.width = "0";
     }
 
+    saveSub() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+
     render() {
         return (
             <SideNav id="mySidenav">
@@ -92,7 +96,7 @@ class AddSub extends Component {
                         <label for="dueDate">Next Due Date</label>
                         <DatePick />
                     </div>
-                    <Submit type="button" class="btn submit btn-sm">Submit</Submit>
+                    <Submit onClick={this.saveSub} type="button" class="btn submit btn-sm">Submit</Submit>
 
                 </Form>
 

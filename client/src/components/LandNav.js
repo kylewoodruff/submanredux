@@ -30,6 +30,7 @@ const NavText = styled.a`
         :hover {
             color: rgb(39, 111, 219);
             text-decoration: none;
+            cursor: pointer;
         }
         `;
 
