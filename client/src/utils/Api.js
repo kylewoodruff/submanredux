@@ -22,7 +22,10 @@ export default {
       console.log("This is inside userDate ");
      console.log(userData)
       return axios.post('/api/watchlist', userData);
-    }
+    },
     
+    getSubs: function () {
+      return axios.get('/api/subs')
+    }
     
   };
