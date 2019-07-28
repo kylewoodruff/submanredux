@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const Show = require('./showSchema');
+const Sub = require('./subsSchema');
 
 // eslint-disable-next-line prefer-destructuring
 const Schema = mongoose.Schema;
@@ -11,22 +13,8 @@ const userSchema = new Schema({
   id: { type: String, required: true, unique: true },
   img_Avatar: { type: String, required: false, unique: false },
   createdate: { type: Date, default: Date.now },
-
-  subs: [
-    {
-      subscriptionName: { type: String },
-      monthlyCost: { type: String },
-      // Add due date
-
-    },
-  ],
-
-  watchlist: [
-    {
-      movie_id: { type: String },
-      title: { type: String },
-    },
-  ],
+  subs: [Sub],
+  watchlist: [Show],
 });
 
 const User = mongoose.model('User', userSchema);
