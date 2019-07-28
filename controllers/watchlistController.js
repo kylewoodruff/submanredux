@@ -16,17 +16,25 @@ module.exports = {
   },
 
   create(req, res) {
-    db.Watchlist
-      .findOneAndUpdate(req.body.movie_id, req.body, { upsert: true, new: true })
-      // eslint-disable-next-line arrow-body-style
-      .then((dbWatchlist) => {
-        console.log(dbWatchlist);
-      })
-      .then(dbUser => res.json(dbUser))
+    // console.log(req.user.sub);
+    // console.log(req.body.movie_id);
+    db.User
+      .findOneAndUpdate(
+        {
+          id: req.user.sub,
+          // 'shows.movie_id': req.movie_id,
+        },
+        { $push: { shows: req.body } },
+        // {
+        //   upsert: true,
+        //   new: true,
+        // },
+      )
+      .then((dbUser) => {res.json(dbUser)})
       .catch(err => res.status(422).json(err));
   },
   update(req, res) {
-    db.Watchlist
+    db.User
       .findOneAndUpdate({ _id: req.params.id }, req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));

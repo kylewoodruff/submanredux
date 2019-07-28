@@ -5,6 +5,7 @@ const { Schema } = mongoose;
 const Shows = new Schema({
   movie_id: { type: String },
   title: { type: String },
+  poster: { type: String },
 });
 
 // const Watchlist = mongoose.model('Watchlist', WatchlistSchema);

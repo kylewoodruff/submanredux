@@ -22,6 +22,9 @@ if (process.env.NODE_ENV === 'production') {
 
 app.use(routes);
 
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
 mongoose.connect(
   process.env.MONGODB_URI || 'mongodb://localhost/MovieDB',
 );
