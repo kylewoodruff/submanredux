@@ -1,5 +1,8 @@
 const router = require('express').Router();
 const userController = require('../../controllers/userController');
+const checkJwt = require('../../serverAuth');
+
+router.use(checkJwt);
 
 
 router.route('/')
