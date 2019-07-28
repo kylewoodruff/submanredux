@@ -16,9 +16,9 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create(req, res) {
-    console.log(req.body.id)
+    // console.log({ id: req.body.id });
     db.User
-      .findOneAndUpdate(req.body.id, req.body, { upsert: true, new: true })
+      .findOneAndUpdate({ id: req.body.id }, req.body, { upsert: true, new: true })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

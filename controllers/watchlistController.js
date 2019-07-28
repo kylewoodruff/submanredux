@@ -24,11 +24,7 @@ module.exports = {
           id: req.user.sub,
           // 'shows.movie_id': req.movie_id,
         },
-        { $push: { shows: req.body } },
-        // {
-        //   upsert: true,
-        //   new: true,
-        // },
+        { $push: { watchlist: req.body } },
       )
       .then((dbUser) => {res.json(dbUser)})
       .catch(err => res.status(422).json(err));
