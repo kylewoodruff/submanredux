@@ -34,18 +34,17 @@ const ActionButton = styled.a`
 // {props.amount || "$17.99"}
 // {props.image || subsdefault}
 
-
 function SubscriptionCard(props) {
     return (
-        <Card className="card col-lg-6">
-            <div className="card-body d-flex align-items-center">
+        <Card className="card col-lg-12">
+            <div className="card-body d-flex align-items-center" key={props.results._id}>
                 <ImgWrapper>
-                    <Image src={props.image || subsdefault}></Image>
+                    <Image src={props.results.image || subsdefault}></Image>
                 </ImgWrapper>
                 <div>
-                    <h5 className="card-title ml-3">{props.name}</h5>
-                    <h6 className="card-subtitle mb-2 ml-3 text-muted">{props.dueDate}</h6>
-                    <p className="card-text ml-3">{props.monthlyCost}</p>
+                    <h5 className="card-title ml-3">{props.results.name}</h5>
+                    <h6 className="card-subtitle mb-2 ml-3 text-muted">{props.results.dueDate}</h6>
+                    <p className="card-text ml-3">{props.results.cost}</p>
                 </div>
                 <div className="ml-auto">
                 <ActionButton href="#" onClick={() => props.openNav()}>
@@ -57,7 +56,7 @@ function SubscriptionCard(props) {
             </div>
             </div>
         </Card>
-
     )
 }
+
 export default SubscriptionCard;
