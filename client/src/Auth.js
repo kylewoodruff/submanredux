@@ -8,7 +8,6 @@ class Auth {
       //redirectUri: "http://localhost:3000/callback",
       redirectUri: "https://submanredux-stg.herokuapp.com/callback",
       // redirectUri: "https://submanredux.herokuapp.com/callback",
-
       audience: "https://sub-merge.auth0.com/userinfo",
       responseType: "id_token",
       scope: "openid profile email"
