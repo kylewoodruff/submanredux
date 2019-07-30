@@ -91,6 +91,16 @@ export default {
           'Authorization': `Bearer ${auth0Client.getIdToken()}`
         }
       });
-  }
+  },
+
+  deleteMovie: function(id) {
+    return axios.delete("/api/watchlist/" + id,
+   {
+    headers: {
+      'Authorization': `Bearer ${auth0Client.getIdToken()}`
+    }
+    });
+    
+  },
 }
 
