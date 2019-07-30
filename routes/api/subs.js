@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const subsController = require('../../controllers/subscriptionController');
+const checkJwt = require('../../serverAuth');
 
+router.use(checkJwt);
 
 router.route('/')
   .get(subsController.findAll)

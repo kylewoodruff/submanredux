@@ -5,10 +5,10 @@ const Schema = mongoose.Schema;
 
 const Subs = new Schema({
 
-  Name: { type: Array, required: true },
-  cost: { type: String, require: true },
-  dueDate: { type: Date, require: true },
-  createDate: { type: Date, require: true },
+  name: { type: Array, required: false },
+  cost: { type: String, require: false },
+  dueDate: { type: Date, require: false },
+  createDate: { type: Date, require: false },
 
 });
 

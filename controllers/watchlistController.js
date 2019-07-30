@@ -26,7 +26,9 @@ module.exports = {
         },
         { $push: { watchlist: req.body } },
       )
-      .then((dbUser) => {res.json(dbUser)})
+      .then((dbUser) => {
+        res.json(dbUser);
+      })
       .catch(err => res.status(422).json(err));
   },
   update(req, res) {
