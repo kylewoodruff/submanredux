@@ -22,7 +22,7 @@ class Callback extends Component {
       }).then(res => console.log(res))
         .catch(err => console.log(err))
 
-    this.props.history.replace('/dashboard');
+    this.props.history.replace('/subscriptions');
   }
   
   
