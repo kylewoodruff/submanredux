@@ -47,7 +47,10 @@ class Subscriptions extends Component {
 
   loadSubscriptions = () => {
     API.getSubs()
-      .then(res => this.setState({ subscriptions: res.data, name: "", monthlyCost: "", dueDate: new Date() }))
+      .then(res => {
+        this.setState({ subscriptions: res.data[0].subs })
+        console.log(this.state.subscriptions)
+      })
       .catch(err => console.log(err));
   };
 
@@ -78,16 +81,10 @@ class Subscriptions extends Component {
       })
         .then(res => console.log(res))
         .catch(err => console.log(err));
-      // console.log({
-      //   name: this.state.name,
-      //   cost: this.state.monthlyCost,
-      //   dueDate: this.state.dueDate,
-      //   createDate: Date.now()
-      // });
     }
-    // this.loadSubscriptions()
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("addBtn").style.display = "inline-block";
+    this.loadSubscriptions();
   };
 
   openNav() {
@@ -153,12 +150,12 @@ class Subscriptions extends Component {
               <SearchBar />
               <hr></hr>
               <div className="row">
-                <Wrapper>
+                <Wrapper2>
                   {this.state.subscriptions.map(element => {
-                    console.log(element);
+                    //console.log("this is element" + JSON.stringify(element));
                     return <SubscriptionCard results={element} />
                   })}
-                </Wrapper>
+                </Wrapper2>
               </div>
             </div>
           </Wrapper>
