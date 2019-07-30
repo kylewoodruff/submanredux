@@ -62,7 +62,7 @@ class Auth {
     this.auth0.logout({
       redirectUri: "https://submanredux-stg.herokuapp.com/callback",
       // redirectUri: "https://submanredux.herokuapp.com/callback",
-      redirectUri: "http://localhost:3000/callback",           
+      //redirectUri: "http://localhost:3000/callback",           
       clientID: "teNlTbyVB3lCq5OTWhmxEbkLJlLowDJN",
     });
     }
