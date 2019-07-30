@@ -3,6 +3,10 @@ const express = require('express');
 const mongoose = require('mongoose');
 const helmet = require('helmet');
 const routes = require('./routes');
+// eslint-disable-next-line import/order
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 
 const PORT = process.env.PORT || 3001;
