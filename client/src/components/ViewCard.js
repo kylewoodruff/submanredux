@@ -10,10 +10,11 @@ width: 200px;
 const Card = styled.div`
 width: 200px;
 margin: 10px;
+background-color: rgba(65, 65, 65, 0.8);
 `;
 
 const Letter = styled.h5`
-color: black;
+color: white;
 `;
 
 function ViewCard(props) {

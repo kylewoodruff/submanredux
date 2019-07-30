@@ -38,7 +38,7 @@ function WatchlistCard(props) {
 
     <Card className="card d-flex" data-value={props.results.id}  >
 
-      <Input type="image" key={props.results.id} src={props.results.picture} alt={props.results.name} className="btn submit" onClick={() => {save(props.results.id, props.results.name, props.results.picture)}} />
+      <Input type="image" key={props.results.id} src={props.results.picture} alt={props.results.name}  onClick={() => {save(props.results.id, props.results.name, props.results.picture)}} />
       <div className="card-footer" key={props.results.name}>
       <Letter>{props.results.name}</Letter>
       </div>
