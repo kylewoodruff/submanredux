@@ -14,6 +14,7 @@ import { createGlobalStyle } from "styled-components";
 import Callback from "./Callback";
 import auth0Client from './Auth';
 import SecuredRoute from './SecuredRoutes/SecuredRoute';
+import WatchlistSearch from './pages/WatchlistSearch';
 
 
 
@@ -69,6 +70,7 @@ class App extends React.Component {
             <SecuredRoute exact path="/watchlist" component={Watchlist}  checkingSession={this.state.checkingSession}/>
             <SecuredRoute exact path="/playlist" component={Playlist}  checkingSession={this.state.checkingSession}/>
             <SecuredRoute path='/profile' component={Profile} checkingSession={this.state.checkingSession} />
+            <SecuredRoute exact path="/watchlist/search" component={WatchlistSearch}  checkingSession={this.state.checkingSession}/>
             <Route exact path='/callback' component={Callback}/>
             <Route component={NoMatch} />
           </Switch>
