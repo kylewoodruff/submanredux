@@ -17,6 +17,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     color: ${props => (props.whiteColor ? 'white' : 'black')};
     background:  black;
+    font-family: 'Roboto', sans-serif;
   }
   hr {
     background-color: white;

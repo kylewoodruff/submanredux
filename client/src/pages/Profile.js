@@ -7,6 +7,7 @@ const ProfileStyle = createGlobalStyle`
   body {
     color: ${props => (props.whiteColor ? 'white' : 'black')};
     background:  black;
+    font-family: 'Roboto', sans-serif;
   }
   `
 
