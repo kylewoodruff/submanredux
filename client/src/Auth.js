@@ -6,7 +6,7 @@ class Auth {
       domain: "sub-merge.auth0.com",
       clientID: "teNlTbyVB3lCq5OTWhmxEbkLJlLowDJN",
       // Localhost redirect - Uncomment when running locally
-      // redirectUri: "http://localhost:3000/callback",
+       //redirectUri: "http://localhost:3000/callback",
       // Staging redirect
       redirectUri: "https://submanredux-stg.herokuapp.com/callback",
       // Production Redirect
@@ -68,7 +68,7 @@ class Auth {
        // Production Redirect
       // redirectUri: "https://submanredux.herokuapp.com/callback",
       // Localhost redirect - Uncomment when running locally
-      // redirectUri: "http://localhost:3000/callback",           
+      //redirectUri: "http://localhost:3000/callback",           
       clientID: "teNlTbyVB3lCq5OTWhmxEbkLJlLowDJN",
     });
     }
