@@ -23,12 +23,10 @@ const Logo = styled.a`
         `;
 
 const NavText = styled.a`
-        color: white;
         margin-right: 25px;
         font-size: 18px;
 
         :hover {
-            color: rgb(39, 111, 219);
             text-decoration: none;
             cursor: pointer;
         }
@@ -41,10 +39,15 @@ const Brand = styled.img`
         margin-bottom: 5px;
     `;
 
+const NavLi = styled.li`
+:hover {
+    color: #0325FB;
+}`;
+
 class LandNav extends Component {
-   
+
     render() {
-        
+
         return (
             <Nav className="navbar navbar-expand-lg navbar-light">
                 <Logo className="logo" href="/dashboard">
@@ -56,10 +59,9 @@ class LandNav extends Component {
                 </button>
                 <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul className="navbar-nav">
-                        <li className="nav-item">
-                        <NavText onClick={auth0Client.signIn}>Login</NavText>
-                        </li>
-                       
+                        <NavLi className="nav-item">
+                            <NavText onClick={auth0Client.signIn}>Login</NavText>
+                        </NavLi>
                     </ul>
                 </div>
             </Nav>

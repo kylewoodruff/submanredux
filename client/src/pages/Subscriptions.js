@@ -33,6 +33,20 @@ const Form = styled.form`
 margin: 5px 15px 10px 25px;
 `;
 
+const ActionButton = styled.a`
+    margin-left: 15px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    color: white;
+    font-size: 1.5em;
+
+    :hover {
+        color: #0325FB;
+    }
+`;
+
 class Subscriptions extends Component {
   state = {
     subscriptions: [],
@@ -56,7 +70,7 @@ class Subscriptions extends Component {
 
   deleteSubscription = id => {
     API.deleteSub(id)
-      .then(res => this.loadSubscriptions())
+      .then(res => console.log(res))
       .catch(err => console.log(err));
   };
 
@@ -84,7 +98,7 @@ class Subscriptions extends Component {
     }
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("addBtn").style.display = "inline-block";
-    this.loadSubscriptions();
+    this.componentDidMount();
   };
 
   openNav() {
@@ -152,16 +166,23 @@ class Subscriptions extends Component {
               <hr></hr>
 
               <div className="d-flex flex-wrap justify-content-center">
-                
-                  {this.state.subscriptions.map(element => {
-                    //console.log("this is element" + JSON.stringify(element));
-                    return (
-                    <div className="d-flex">
-                    <SubscriptionCard results={element} />
+
+                {this.state.subscriptions.map(element => {
+                  //console.log("this is element" + JSON.stringify(element));
+                  return (
+                    <div className="d-flex flex-sm-{shrink}-1">
+                      <SubscriptionCard results={element}>
+                        <ActionButton href="#" onClick={this.openNav}>
+                          <i className="fa fa-edit"></i>
+                        </ActionButton>
+                        <ActionButton href="#" onClick={this.deleteSubscription()} className="remove">
+                          <i className="fa fa-trash"></i>
+                        </ActionButton>
+                      </SubscriptionCard>
                     </div>
-                    )
-                  })}
-                
+                  )
+                })}
+
 
               </div>
             </div>
