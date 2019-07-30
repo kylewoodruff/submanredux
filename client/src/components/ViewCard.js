@@ -24,7 +24,7 @@ function ViewCard(props) {
 
       <Input type="image" key={props.results.id} src={props.results.poster} alt={props.results.title}/>
       <div className="card-footer" key={props.results.title}>
-       <Letter> <h5 >{props.results.title}</h5> </Letter>
+       <Letter>{props.results.title}</Letter>
       </div>
 
 

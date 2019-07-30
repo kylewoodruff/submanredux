@@ -5,11 +5,7 @@ import Header from "../components/Header.js";
 import api from "../utils/mainAPI"
 import WatchlistCard from "../components/WatchlistCard.js";
 import { createGlobalStyle } from 'styled-components';
-import Api from "../utils/Api";
-import ViewCard from "../components/ViewCard.js";
 import styled from 'styled-components';
-
-
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -21,22 +17,15 @@ const GlobalStyle = createGlobalStyle`
   }`;
 
 
-
 const Saved = styled.div`
 color: white;
 `;
-
 
 class Watchlist extends Component {
     state = {
         result: [],
         search: "",
-        watchlist: [],
-
-
     }
-
-
 
     handleMovie = event => {
         event.preventDefault();
@@ -60,8 +49,6 @@ class Watchlist extends Component {
             })
             .catch(err => console.log(err));
     };
-
-
 
     render() {
         return (
