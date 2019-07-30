@@ -11,10 +11,7 @@ width: 200px;
 const Card = styled.div`
 width: 200px;
 margin: 10px;
-
 `;
-
-
 
 function WatchlistCard(props) {
   const save = (movie_id, name, poster) => {

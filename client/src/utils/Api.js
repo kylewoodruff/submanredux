@@ -6,34 +6,34 @@ export default {
 
   getUsers: function () {
     return axios.get("/api/user",
-    {
-      headers: {
-        'Authorization': `Bearer ${auth0Client.getIdToken()}`
-      }
-    });
+      {
+        headers: {
+          'Authorization': `Bearer ${auth0Client.getIdToken()}`
+        }
+      });
   },
 
   getUser: function (id) {
     return axios.get("/api/user/" + id,
-    {
-      headers: {
-        'Authorization': `Bearer ${auth0Client.getIdToken()}`
-      }
-    });
+      {
+        headers: {
+          'Authorization': `Bearer ${auth0Client.getIdToken()}`
+        }
+      });
   },
 
   deleteUser: function (id) {
     return axios.delete("/api/user/" + id,
-    {
-      headers: {
-        'Authorization': `Bearer ${auth0Client.getIdToken()}`
-      }
-    });
+      {
+        headers: {
+          'Authorization': `Bearer ${auth0Client.getIdToken()}`
+        }
+      });
   },
 
   saveUser: function (userData) {
     return axios.post(
-      '/api/user', 
+      '/api/user',
       userData,
       {
         headers: {
@@ -45,22 +45,43 @@ export default {
     //   console.log("This is inside userDate ");
     //  console.log(userData)
     return axios.post(
-      '/api/watchlist', 
+      '/api/watchlist',
       userData,
       {
         headers: {
           'Authorization': `Bearer ${auth0Client.getIdToken()}`
         }
       });
-
   },
+
+  saveSub: function (userData) {
+   //console.log("this is userData" + JSON.stringify(userData));
+    return axios.post('/api/subs',
+      userData,
+      {
+        headers: {
+          'Authorization': `Bearer ${auth0Client.getIdToken()}`
+        }
+      }
+    )
+  },
+
   getSubs: function () {
-      return axios.get('/api/subs',
+    return axios.get('/api/subs',
       {
         headers: {
           'Authorization': `Bearer ${auth0Client.getIdToken()}`
         }
       })
-    }
+  },
+
+  deleteSub: function (id) {
+    return axios.delete("/api/subs/" + id,
+      {
+        headers: {
+          'Authorization': `Bearer ${auth0Client.getIdToken()}`
+        }
+      })
+  }
 }
 
