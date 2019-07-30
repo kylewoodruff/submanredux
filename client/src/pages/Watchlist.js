@@ -3,21 +3,26 @@ import Navbar from "../components/Navbar.js";
 import Wrapper2 from "../components/Wrapper2.js";
 import Header from "../components/Header.js";
 import api from "../utils/mainAPI"
-import WatchlistCard from "../components/WatchlistCard.js";
 import { createGlobalStyle } from 'styled-components';
 import Api from "../utils/Api";
 import ViewCard from "../components/ViewCard.js";
 import styled from 'styled-components';
+import Wrapper from "../components/Wrapper";
+import { BrowserRouter as browserHistory } from "react-router-dom";
 
-const WatchlistStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
   body {
     color: ${props => (props.whiteColor ? 'white' : 'black')};
     background:  black;
-  };`
+  }
+    hr {
+        background: white;
+    }`;
 
 
 const Saved = styled.div`
 color: white;
+
 `;
 
 
@@ -26,83 +31,73 @@ class Watchlist extends Component {
         result: [],
         search: "",
         watchlist: [],
-        reload: false
+
 
     }
+
 
     componentDidMount() {
         this.loadWatchlist();
     };
 
+
     loadWatchlist() {
         Api.watchlistLoad()
-            .then(res => this.setState({ watchlist: res.data[0].watchlist}))
+            .then(res => this.setState({ watchlist: res.data[0].watchlist }))
             .catch(err => console.log(err));
 
     }
 
-
-    handleMovie = event => {
-        event.preventDefault();
-        this.searchMovie(this.state.search);
-
-    };
-
-    handleInputChange = event => {
-        event.preventDefault();
-        const { name, value } = event.target;
-        this.setState({
-            [name]: value
-        });
-    };
-
-    searchMovie = query => {
-        api.search(query)
-            .then(res => {
-                this.setState({ result: res.data })
-                console.log(res.data)
-            })
+    deleteShow = id => {
+        Api.deleteMovie(id)
+            .then(res => this.loadBooks())
             .catch(err => console.log(err));
     };
 
+    handleRouteChanged = () =>{
+        this.props.history.push('/watchlist/search');
+    }
     render() {
         return (
             <React.Fragment>
-                <WatchlistStyle whiteColor />
-                <div>
+                <GlobalStyle whiteColor />
+                <div className="row">
                     <Header />
-                    <Navbar />
-                    <Wrapper2>
-                        <div className="container">
-                            <br></br>
+                </div>
+                <br></br>
+                <br></br>
+                <br></br>
+                <Navbar />
+                <Wrapper2>
+                <Wrapper>
+                    <div className="container-fluid ml-5">
+                        <div className='row d-flex justify-content-between mt-3'>
+                        <Saved className='d-flex '><h4 className="mt-3">My Watchlist</h4></Saved>
+                        <a className='btn btn-dark btn-lg' href='/watchlist/search'>Search
+                        </a>
+                        </div>
+
+                        <hr></hr>
+                        <div className="row">
+
+                            
+
                             <div className="row">
-                                <div className="col-2 mt-5">
-                                    <p></p>
+                                <div className="d-flex flex-wrap">
+                                    {
+                                        this.state.watchlist.map(element => {
+                                            return <ViewCard results={element} />
+                                        })
+
+                                    }
                                 </div>
-                                <input type="text" className="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" name="search" onChange={this.handleInputChange} value={this.state.search}></input>
-                                <h1><button className="btn btn-danger" onClick={this.handleMovie}>Search</button></h1>
-                            </div>
-                            <div className="d-flex flex-wrap">
-                                {
-                                    this.state.result.map(element => {
-                                        console.log(element);
-                                        return <WatchlistCard results={element} />
-                                    })
-                                }
-                            </div>
-                            <hr></hr>
-                            <Saved><div>Saved Watchlist</div></Saved>
-                            <div className="d-flex flex-wrap">
-                                {
-                                    this.state.watchlist.map(element => {
-                                        return <ViewCard results={element} />
-                                    })
-                                }
                             </div>
 
                         </div>
-                    </Wrapper2>
-                </div>
+                    </div>
+                    </Wrapper>
+                </Wrapper2>
+
             </React.Fragment>
         )
     }

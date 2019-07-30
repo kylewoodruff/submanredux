@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 const helmet = require('helmet');
 const routes = require('./routes');
 
-
 const PORT = process.env.PORT || 3001;
 
 const app = express();
