@@ -12,10 +12,11 @@ width: 200px;
 const Card = styled.div`
 width: 200px;
 margin: 10px;
+background-color: rgba(65, 65, 65, 0.8);
 `;
 
 const Letter = styled.h5`
-color: black;
+color: white;
 `;
 
 
@@ -28,13 +29,8 @@ function WatchlistCard(props) {
       poster: poster,
     }).then(res => {
       console.log(res)
-      
-    }
-    
-    )
-
+    })
       .catch(err => console.log(err))
-
   }
   
 
@@ -42,9 +38,9 @@ function WatchlistCard(props) {
 
     <Card className="card d-flex" data-value={props.results.id}  >
 
-      <Input type="image" key={props.results.id} src={props.results.picture} alt={props.results.name} className="btn submit" onClick={() => {save(props.results.id, props.results.name, props.results.picture)}} />
+      <Input type="image" key={props.results.id} src={props.results.picture} alt={props.results.name}  onClick={() => {save(props.results.id, props.results.name, props.results.picture)}} />
       <div className="card-footer" key={props.results.name}>
-      <Letter> <h5 >{props.results.name}</h5> </Letter>
+      <Letter>{props.results.name}</Letter>
       </div>
 
 

@@ -10,10 +10,11 @@ width: 200px;
 const Card = styled.div`
 width: 200px;
 margin: 10px;
+background-color: rgba(65, 65, 65, 0.8);
 `;
 
 const Letter = styled.h5`
-color: black;
+color: white;
 `;
 
 function ViewCard(props) {
@@ -24,7 +25,7 @@ function ViewCard(props) {
 
       <Input type="image" key={props.results.id} src={props.results.poster} alt={props.results.title}/>
       <div className="card-footer" key={props.results.title}>
-       <Letter> <h5 >{props.results.title}</h5> </Letter>
+       <Letter>{props.results.title}</Letter>
       </div>
 
 
