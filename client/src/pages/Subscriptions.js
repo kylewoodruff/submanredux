@@ -145,20 +145,29 @@ class Subscriptions extends Component {
           </AddSub>
 
           <Wrapper>
-            <div className="container-fluid ml-5">
+            <div className="container-fluid">
+
               <h4 className="text-left mb-3 mt-3">My Subscriptions</h4>
               <SearchBar />
               <hr></hr>
-              <div className="row">
-                <Wrapper2>
+
+              <div className="d-flex flex-wrap justify-content-center">
+                
                   {this.state.subscriptions.map(element => {
                     //console.log("this is element" + JSON.stringify(element));
-                    return <SubscriptionCard results={element} />
+                    return (
+                    <div className="d-flex">
+                    <SubscriptionCard results={element} />
+                    </div>
+                    )
                   })}
-                </Wrapper2>
+                
+
               </div>
             </div>
           </Wrapper>
+
+
 
         </Wrapper2>
       </React.Fragment>
