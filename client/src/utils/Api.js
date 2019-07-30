@@ -55,7 +55,7 @@ export default {
   },
 
   saveSub: function (userData) {
-   //console.log("this is userData" + JSON.stringify(userData));
+    //console.log("this is userData" + JSON.stringify(userData));
     return axios.post('/api/subs',
       userData,
       {
@@ -82,6 +82,15 @@ export default {
           'Authorization': `Bearer ${auth0Client.getIdToken()}`
         }
       })
+  },
+
+  watchlistLoad: function () {
+    return axios.get("/api/watchlist",
+      {
+        headers: {
+          'Authorization': `Bearer ${auth0Client.getIdToken()}`
+        }
+      });
   }
 }
 

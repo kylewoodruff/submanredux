@@ -13,15 +13,22 @@ width: 200px;
 margin: 10px;
 `;
 
+const Letter = styled.h5`
+color: black;
+`;
+
+
 function WatchlistCard(props) {
   const save = (movie_id, name, poster) => {
-    console.log("inside save" + name)
+    
     API.saveWatchlist({
       movie_id: movie_id,
       title: name,
       poster: poster,
     }).then(res => console.log(res))
+
       .catch(err => console.log(err))
+
   }
 
   return (
@@ -30,7 +37,7 @@ function WatchlistCard(props) {
 
       <Input type="image" key={props.results.id} src={props.results.picture} alt={props.results.name} className="btn submit" onClick={() => save(props.results.id, props.results.name, props.results.picture)} />
       <div className="card-footer" key={props.results.name}>
-        <h5 >{props.results.name}</h5>
+      <Letter> <h5 >{props.results.name}</h5> </Letter>
       </div>
 
 
