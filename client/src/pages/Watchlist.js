@@ -31,21 +31,16 @@ class Watchlist extends Component {
         result: [],
         search: "",
         watchlist: [],
-
-
     }
-
 
     componentDidMount() {
         this.loadWatchlist();
     };
 
-
     loadWatchlist() {
         Api.watchlistLoad()
             .then(res => this.setState({ watchlist: res.data[0].watchlist }))
             .catch(err => console.log(err));
-
     }
 
     deleteShow = id => {
@@ -76,23 +71,17 @@ class Watchlist extends Component {
                         <a className='btn btn-dark btn-lg' href='/watchlist/search'>Search
                         </a>
                         </div>
-
                         <hr></hr>
                         <div className="row">
-
-                            
-
                             <div className="row">
                                 <div className="d-flex flex-wrap">
                                     {
                                         this.state.watchlist.map(element => {
                                             return <ViewCard results={element} />
                                         })
-
                                     }
                                 </div>
                             </div>
-
                         </div>
                     </div>
                     </Wrapper>

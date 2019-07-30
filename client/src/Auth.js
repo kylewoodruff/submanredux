@@ -5,8 +5,11 @@ class Auth {
     this.auth0 = new auth0.WebAuth({
       domain: "sub-merge.auth0.com",
       clientID: "teNlTbyVB3lCq5OTWhmxEbkLJlLowDJN",
-      redirectUri: "http://localhost:3000/callback",
-      // redirectUri: "https://submanredux-stg.herokuapp.com/callback",
+      // Localhost redirect - Uncomment when running locally
+      // redirectUri: "http://localhost:3000/callback",
+      // Staging redirect
+      redirectUri: "https://submanredux-stg.herokuapp.com/callback",
+      // Production Redirect
       // redirectUri: "https://submanredux.herokuapp.com/callback",
       audience: "https://sub-merge.auth0.com/userinfo",
       responseType: "id_token",
@@ -60,9 +63,12 @@ class Auth {
         
   signOut() {
     this.auth0.logout({
-      // redirectUri: "https://submanredux-stg.herokuapp.com/callback",
+      // Staging redirect
+      redirectUri: "https://submanredux-stg.herokuapp.com/callback",
+       // Production Redirect
       // redirectUri: "https://submanredux.herokuapp.com/callback",
-      redirectUri: "http://localhost:3000/callback",           
+      // Localhost redirect - Uncomment when running locally
+      // redirectUri: "http://localhost:3000/callback",           
       clientID: "teNlTbyVB3lCq5OTWhmxEbkLJlLowDJN",
     });
     }
