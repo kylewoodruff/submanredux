@@ -176,7 +176,7 @@ class Subscriptions extends Component {
                         <ActionButton href="#" onClick={this.openNav}>
                           <i className="fa fa-edit"></i>
                         </ActionButton>
-                        <ActionButton href="#" onClick={this.deleteSubscription()} className="remove">
+                        <ActionButton href="#" onClick={this.deleteSubscription} className="remove">
                           <i className="fa fa-trash"></i>
                         </ActionButton>
                       </SubscriptionCard>
