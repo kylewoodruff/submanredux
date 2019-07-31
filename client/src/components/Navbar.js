@@ -4,12 +4,13 @@ import auth0Client from '../Auth.js';
 
 
 const FaNav = styled.i`
-    position: relative;
+    position: sticky;
     display: table-cell;
     width: 80px;
     height: 40px;
     text-align: center;
     vertical-align: middle;
+    align: center;
     font-size:20px;
     color:rgb(202, 202, 202);
 
@@ -19,15 +20,15 @@ const FaNav = styled.i`
 `;
 
 const FaNav2 = styled.i`
-    position: relative;
+    position: sticky;
     display: table-cell;
     width: 80px;
     height: 40px;
     text-align: center;
     vertical-align: middle;
+    align: center;
     font-size:20px;
     color:rgb(202, 202, 202);
-    padding-left: 3px;
 
     :hover {
         color: white;
@@ -88,7 +89,6 @@ const MainMenu = styled.nav`
         color:rgb(202, 202, 202);
         outline:0;
         margin:0;
-        padding:0;
         height: 40px;
 
         :hover {
@@ -127,12 +127,14 @@ const MainMenu = styled.nav`
         `;
 
 const NavText = styled.span`
-    position:relative;
+    position: sticky;
     display:table-cell;
     vertical-align:middle;
+    align: center;
     width:185px;
     color:rgb(202, 202, 202);
     font-family: 'Titillium Web', sans-serif;
+    margin-left: 0px;
 
     :hover {
         color: white;
@@ -140,13 +142,14 @@ const NavText = styled.span`
 `;
 
 const NavText2 = styled.span`
-position:relative;
+position:sticky;
 display:table-cell;
 vertical-align:middle;
+align: center;
 width:185px;
 color:rgb(202, 202, 202);
 font-family: 'Titillium Web', sans-serif;
-padding-left: 2.5px;
+margin-left: 0px;
 
     :hover {
         color: white;
