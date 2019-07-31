@@ -35,14 +35,17 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   remove(req, res) {
-    // let user;
     db.User
       .findOne(
         {
           id: req.user.sub,
         },
       )
-      .then(dbModel => console.log(dbModel))
+      .then((dbModel) => {
+        console.log("dbModel", dbModel)
+        let subArray = dbModel.subs;
+        console.log("subArray", subArray);
+      })
       // .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

@@ -6,7 +6,7 @@ import auth0Client from '../Auth.js';
 const FaNav = styled.i`
     position: sticky;
     display: table-cell;
-    width: 80px;
+    width: 60px;
     height: 40px;
     text-align: center;
     vertical-align: middle;
@@ -22,7 +22,7 @@ const FaNav = styled.i`
 const FaNav2 = styled.i`
     position: sticky;
     display: table-cell;
-    width: 80px;
+    width: 60px;
     height: 40px;
     text-align: center;
     vertical-align: middle;
@@ -129,9 +129,9 @@ const MainMenu = styled.nav`
 const NavText = styled.span`
     position: sticky;
     display:table-cell;
-    vertical-align:middle;
-    align: center;
-    width:185px;
+    vertical-align: middle;
+    text-align: left;
+    width:auto;
     color:rgb(202, 202, 202);
     font-family: 'Titillium Web', sans-serif;
     margin-left: 0px;
@@ -142,11 +142,11 @@ const NavText = styled.span`
 `;
 
 const NavText2 = styled.span`
-position:sticky;
+position: sticky;
 display:table-cell;
-vertical-align:middle;
-align: center;
-width:185px;
+vertical-align: middle;
+text-align: left;
+width: auto;
 color:rgb(202, 202, 202);
 font-family: 'Titillium Web', sans-serif;
 margin-left: 0px;
