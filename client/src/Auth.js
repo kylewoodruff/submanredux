@@ -8,10 +8,10 @@ class Auth {
       // Localhost redirect - Uncomment when running locally
        //redirectUri: "http://localhost:3000/callback",
       // Staging redirect
-      redirectUri: "https://submanredux-stg.herokuapp.com/callback",
+      // redirectUri: "https://submanredux-stg.herokuapp.com/callback",
       //redirectUri: "https://submanredux.herokuapp.com/callback",
       // Production Redirect
-      // redirectUri: "https://submanredux.herokuapp.com/callback",
+      redirectUri: "https://submanredux.herokuapp.com/callback",
       audience: "https://sub-merge.auth0.com/userinfo",
       responseType: "id_token",
       scope: "openid profile email"
@@ -65,8 +65,8 @@ class Auth {
   signOut() {
     this.auth0.logout({
       // Staging redirect
-      redirectUri: "https://submanredux-stg.herokuapp.com/callback",
-      //redirectUri: "https://submanredux.herokuapp.com/callback",
+      // redirectUri: "https://submanredux-stg.herokuapp.com/callback",
+      redirectUri: "https://submanredux.herokuapp.com/callback",
        // Production Redirect
       // redirectUri: "https://submanredux.herokuapp.com/callback",
       // Localhost redirect - Uncomment when running locally
