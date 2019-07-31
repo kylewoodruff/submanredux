@@ -1,14 +1,15 @@
-const router = require("express").Router();
-const userController = require("../../controllers/userController");
+const router = require('express').Router();
+const userController = require('../../controllers/userController');
+const checkJwt = require('../../serverAuth');
 
+router.use(checkJwt);
 
-router.route("/")
+router.route('/')
   .get(userController.findAll)
   .post(userController.create);
 
 
-router
-  .route("/:id")
+router.route('/:id')
   .get(userController.findById)
   .put(userController.update)
   .delete(userController.remove)
