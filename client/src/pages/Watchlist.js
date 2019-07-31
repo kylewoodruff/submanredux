@@ -2,13 +2,11 @@ import React, { Component } from "react";
 import Navbar from "../components/Navbar.js";
 import Wrapper2 from "../components/Wrapper2.js";
 import Header from "../components/Header.js";
-import api from "../utils/mainAPI"
 import { createGlobalStyle } from 'styled-components';
 import Api from "../utils/Api";
 import ViewCard from "../components/ViewCard.js";
 import styled from 'styled-components';
 import Wrapper from "../components/Wrapper";
-import { BrowserRouter as browserHistory } from "react-router-dom";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -40,7 +38,10 @@ class Watchlist extends Component {
 
     loadWatchlist() {
         Api.watchlistLoad()
-            .then(res => this.setState({ watchlist: res.data[0].watchlist }))
+            .then(res => {
+                this.setState({ watchlist: res.data[0].watchlist })
+                console.log(res.data[0]);
+            })
             .catch(err => console.log(err));
     }
 
@@ -50,9 +51,7 @@ class Watchlist extends Component {
             .catch(err => console.log(err));
     };
 
-    handleRouteChanged = () =>{
-        this.props.history.push('/watchlist/search');
-    }
+
     render() {
         return (
             <React.Fragment>
