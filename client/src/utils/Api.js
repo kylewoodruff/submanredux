@@ -100,7 +100,6 @@ export default {
       'Authorization': `Bearer ${auth0Client.getIdToken()}`
     }
     });
-    
   },
 }
 

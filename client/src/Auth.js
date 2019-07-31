@@ -67,10 +67,10 @@ class Auth {
       // Staging redirect
       redirectUri: "https://submanredux-stg.herokuapp.com/callback",
       //redirectUri: "https://submanredux.herokuapp.com/callback",
-       // Production Redirect
+      // Production Redirect
       // redirectUri: "https://submanredux.herokuapp.com/callback",
       // Localhost redirect - Uncomment when running locally
-      //redirectUri: "http://localhost:3000/callback",           
+      //redirectUri: "http://localhost:3000/callback",
       clientID: "teNlTbyVB3lCq5OTWhmxEbkLJlLowDJN",
     });
     }
