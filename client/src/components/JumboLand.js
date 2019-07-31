@@ -2,7 +2,6 @@ import React from "react";
 import styled from 'styled-components';
 import auth0Client from '../Auth';
 
-
 const Jumbo = styled.div`
     margin-top: 180px;
     background-color: rgba(0, 0, 0, 0.0);
@@ -45,13 +44,13 @@ const User = styled.p`
     margin-top: 25px;
 `;
 
-const JumboSign = styled.a`
+const JumboLog = styled.a`
     color: white;
-    font-size: 16px;
+    font-size: 18px;
     margin-top: -25px;
 
     :hover {
-        color: rgb(39, 111, 219);
+        color: #0325FB;
         text-decoration: none;
         cursor: pointer;
     }
@@ -69,10 +68,19 @@ const SignUp = styled.a`
     border-radius: 10px;
 
     :hover {
-        color: rgb(0, 174, 255);
+        color: #0325FB;
         text-decoration: none;
         cursor: pointer;
     }
+`;
+
+const HoverDiv = styled.div`
+height: 50px;
+padding: 1px;
+padding-top: 10px;
+:hover {
+    color: #0325FB;
+}
 `;
 
 function Jumbotron() {
@@ -81,10 +89,14 @@ function Jumbotron() {
             <Slogan className="text-center">Diving deep to keep your subscriptions neat</Slogan>
             <SubSlogan className="text-center">All of your subscriptions in one place</SubSlogan>
             <div className="text-center">
-                <SignUp className="btn-lg" onClick={auth0Client.signIn} role="button">Sign Up Now!</SignUp>
-                    <User className="text-center user">Already a user?</User>
-                    <JumboSign className="btn btn-sm jumboSign" onClick={auth0Client.signIn}
-                        role="button">Login</JumboSign>
+                <HoverDiv className="mx-auto">
+                    <SignUp className="btn-lg" onClick={auth0Client.signIn} role="button">Sign Up Now!</SignUp>
+                </HoverDiv>
+                <User className="text-center user">Already a user?</User>
+                <HoverDiv className="mx-auto">
+                    <JumboLog className="btn btn-sm jumboSign" onClick={auth0Client.signIn}
+                        role="button">Login</JumboLog>
+                </HoverDiv>
             </div>
         </Jumbo>
     )

@@ -35,10 +35,19 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   remove(req, res) {
+    // let user;
     db.User
-      .findById({ _id: req.params.id })
-      .then(dbModel => dbModel.remove())
-      .then(dbModel => res.json(dbModel))
+      .findOne(
+        {
+          id: req.user.sub,
+        },
+      )
+      .then(dbModel => console.log(dbModel))
+      // .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
 };
+
+//for delete need to findone to get user, 
+//then findOneAndDelete the subscription based off of 
+// the id. The index needs to be saved

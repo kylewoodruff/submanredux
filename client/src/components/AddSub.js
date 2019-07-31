@@ -48,7 +48,7 @@ class AddSub extends Component {
                 <SideNav id="mySidenav">
                     <CloseBtn href="#" onClick={this.closeNav}>&times;</CloseBtn>
                     {this.props.children}
-                    <AddSubBtn />
+                        <AddSubBtn />
                 </SideNav>
             </Wrapper2>
         );
